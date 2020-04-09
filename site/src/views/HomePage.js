@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../assets/tangerinerye_logo.png';
 import home from './HomePage.module.css';
+import IconBar from './IconBar';
 
 function HomePage() {  
   return (
@@ -15,6 +16,7 @@ function HomePage() {
       {/* <Button class props={spotify} /> */}
       {/* <Button class props={youtube} /> */}
       {/* <Button class props={applemusic} /> */}
+      <IconBar />
     </div>
   );
 }
