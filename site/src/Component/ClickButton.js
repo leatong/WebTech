@@ -4,7 +4,7 @@ import { StyledButton } from '../views/ButtonStyle'
 
 function ClickButton(props) {    return (
         <Link to={`/${props.path}`} style={{ textDecoration: 'none' }}>
-            <StyledButton variant='outlinedSecondary'>{props.name}</StyledButton>
+            <StyledButton variant='outlined'>{props.name}</StyledButton>
         </Link>
     );
 }
