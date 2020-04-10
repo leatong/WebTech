@@ -1,15 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import HomePage from './views/HomePage';
-import MusicPage from './views/MusicPage';
 import * as serviceWorker from './serviceWorker';
+import {BrowserRouter, Route} from 'react-router-dom';
+import AllPaths from "./Component/AllPaths";
 
 ReactDOM.render(
-  <React.StrictMode>
-    <HomePage />
-    {/*<MusicPage />*/}
-  </React.StrictMode>,
+    <React.StrictMode>
+      <BrowserRouter>
+              <AllPaths/>
+      </BrowserRouter>
+    </React.StrictMode>,
   document.getElementById('root')
 );
 

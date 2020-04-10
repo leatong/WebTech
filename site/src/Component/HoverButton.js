@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import './../App.css';
+import {Link} from "react-router-dom";
 
-function HoverButton() {
+function HoverButton(props) {
 
     function changeBackground(e) {
         e.target.style.background = 'red';
@@ -12,11 +12,11 @@ function HoverButton() {
     }
 
     return (
-        <div className="App">
-            <button
-                onMouseOver={changeBackground}
-                onMouseOut={changeBackgroundBack}>
-                Hover over me!
+        <div>
+            <button className={props.styleName}
+                    onMouseOver = {changeBackground}
+                    onMouseOut = {changeBackgroundBack}>
+                {props.name}
             </button>
         </div>
     );
