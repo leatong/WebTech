@@ -10,8 +10,9 @@ function HomePage() {
       <img className={home.logo} src={logo} alt="Tangerine Rye logo" />
         <ClickButton name='ENTER SITE' path='music' buttonStyle='home'/>
         <ClickButton name='TOUR' path='tour' buttonStyle='home'/>
-        <ClickButton name='MERCH' paht='merch' buttonStyle='home'/>
+        <ClickButton name='MERCH' path='merch' buttonStyle='home'/>
       <IconBar />
+      
     </div>
   );
 }
