@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React from 'react';
+import React, {Component} from 'react';
 import { OutlinedButton } from '../views/ButtonStyle'
 import Button from "@material-ui/core/Button";
 

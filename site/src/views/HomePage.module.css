@@ -13,3 +13,13 @@
   height: 25vmin;
   pointer-events: none;
 }
+
+.email {
+  height: 5vh;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 10px;
+  font-size: calc(7px + 2vmin);
+}
