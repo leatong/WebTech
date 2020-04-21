@@ -8,7 +8,7 @@ import AllPaths from "./Component/AllPaths";
 ReactDOM.render(
     <React.StrictMode>
       <BrowserRouter>
-              <AllPaths/>
+          <AllPaths/>
       </BrowserRouter>
     </React.StrictMode>,
   document.getElementById('root')

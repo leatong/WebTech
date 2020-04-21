@@ -1,14 +1,13 @@
 import React, {Component} from "react";
-import Button from "@material-ui/core/Button";
 import {OutlinedButton} from "../views/ButtonStyle";
-import home from "../views/HomePage.module.css"
+import home from "../views/HomePage.module.css";
 
 class EmailForm extends Component {
     constructor(props) {
-        super(props)
+        super(props);
 
         this.state = {
-            userEmail: ''
+            userEmail: '',
         }
     }
 
@@ -16,18 +15,37 @@ class EmailForm extends Component {
         this.setState({
             userEmail: event.target.value
         })
-    }
+    };
 
     handleSubmit = (event) => {
-        alert(`${this.state.userEmail}`)
-    }
+        /*event.preventDefault();*/
+        alert(`Success: ${this.state.userEmail} added`)
+
+        /*if (this.state.userEmail) {
+            /!* ------------------------------------------------ *!/
+            /!* This is where to fetch for database *!/
+            /!*
+            fetch(`...email=${this.state.userEmail}`)
+                .then(res => res.json())
+                .catch(err => console.log(err));
+             *!/
+
+        }*/
+    };
 
     render() {
         return (
             <form onSubmit={this.handleSubmit}>
                 <div className={home.email}>
-                    <input type='text' placeholder='Email address' value={this.state.userEmail} onChange={this.handleUserEmailChange}/>
-                    <OutlinedButton type='submit' style={{fontSize: '2vh', width: '15vh', height: 40}}>
+                    <input className={home.subscribe}
+                        type='email'
+                        name='userEmail'
+                        placeholder='Enter Email Address'
+                        value={this.state.userEmail}
+                        onChange={this.handleUserEmailChange}/>
+                    <OutlinedButton
+                        type='submit'
+                        style={{fontSize: '2vh', padding: '0 2vh', height: 40}}>
                         Subscribe!
                     </OutlinedButton>
                 </div>

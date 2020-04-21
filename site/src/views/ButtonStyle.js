@@ -8,6 +8,7 @@ export const OutlinedButton = withStyles({
         color: 'black',
         height: 48,
         margin: '10px',
+        padding: '0 30px',
         "&:hover": {
             backgroundColor: "#FF7A51",
             color: 'white',
