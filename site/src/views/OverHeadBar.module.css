@@ -1,0 +1,18 @@
+.center {
+    min-height: 5vh;
+    line-height: 5vh;
+    text-align: center;
+    color: tomato;
+    background-color: transparent;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.overhead {
+    width: 20vh;
+}
+
+.overheadStyle {
+    font-size: calc(20px + 20vmin);
+    font-weight: bold;
+}

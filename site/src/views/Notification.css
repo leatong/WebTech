@@ -1,0 +1,16 @@
+.notification {
+    transition: .35s;
+    transform: translateX(100%);
+}
+
+.notification.visible {
+    transform: translateX(0);
+}
+
+.notification.success {
+    background-color: transparent;
+}
+
+.notification p {
+    color: limegreen;
+}
