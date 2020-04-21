@@ -10,18 +10,20 @@ import OverHeadBar from "./OverHeadBar";
 
 function MusicPage() {
     return (
-        <div className={music.center}>
+        <div className="body">
             <OverHeadBar currentPage='MUSIC'/>
-            <img className={music.logo} src={logo} alt="Tangerine Rye logo" />
-            <div className={music.vinyl}>
-                <img className={music.img} src={bandpic}
-                     alt="Tangerine Rye members" />
-                <img id="album" className={music.album} src={album} 
-                     alt="Tangerine Rye album cover" />
-                <img className={music.lemon} src={lemon}
-                     alt="La la lemonade song cover" />
-                <img className={music.honey} src={honey}
-                     alt="Honey song cover" />
+            <div className={music.center}>
+                <img className={music.logo} src={logo} alt="Tangerine Rye logo" />
+                <div className={music.vinyl}>
+                    <img className={music.img} src={bandpic}
+                        alt="Tangerine Rye members" />
+                    <img id="album" className={music.album} src={album} 
+                        alt="Tangerine Rye album cover" />
+                    <img className={music.lemon} src={lemon}
+                        alt="La la lemonade song cover" />
+                    <img className={music.honey} src={honey}
+                        alt="Honey song cover" />   
+                </div>
             </div>
             <IconBar />
         </div>
