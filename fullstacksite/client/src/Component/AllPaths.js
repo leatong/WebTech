@@ -14,6 +14,8 @@ function AllPaths() {
             <Route path='/tour' render={TourPage} />
             <Route path='/merch' exact render={MerchPage} />
             <Route path='/merch/tshirt1' render={Tshirt1Page} />
+            {/*<Route path='/merch/album1' render={Album1Page} />
+            <Route path='/merch/album2' render={Album2Page} />*/}
         </div>
     )
 }
