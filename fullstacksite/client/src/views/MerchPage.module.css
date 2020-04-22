@@ -1,0 +1,25 @@
+.overview {
+    height: 90vh;
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    margin: 5vh;
+    padding: 5vh;
+    justify-content: center;
+}
+
+.tile {
+    display: flex;
+    flex-direction: column;
+}
+
+.pic {
+    height: 50vh;
+}
+
+.tag {
+    font-weight: bolder;
+    font-size: 3vh;
+    margin: 2vh 2vh 0 2vh;
+    padding: 0;
+}

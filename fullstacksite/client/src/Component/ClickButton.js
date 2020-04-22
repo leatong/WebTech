@@ -2,11 +2,22 @@ import { Link } from "react-router-dom";
 import React, {Component} from 'react';
 import { OutlinedButton } from '../views/ButtonStyle'
 import Button from "@material-ui/core/Button";
+import merch from "../views/MerchPage.module.css";
 
-export function ClickButton(props) {
+export function ClickHomeButton(props) {
     return (
         <Link to={`/${props.path}`} style={{textDecoration: 'none'}}>
             <OutlinedButton variant={props.buttonStyle}>{props.name}</OutlinedButton>
+        </Link>
+    );
+}
+
+export function ClickDetailButton(props) {
+    return (
+        <Link to={`/merch/${props.path}`} style={{textDecoration: 'none'}}>
+            <Button variant='contained' style={{width: '50vh'}}>
+                DETAILS
+            </Button>
         </Link>
     );
 }
