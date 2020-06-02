@@ -5,6 +5,7 @@ import bandPic from "../assets/bandpic.jpg";
 import oscar from "../assets/Oscar.png";
 import hal from "../assets/Hal.png";
 import jordan from "../assets/Jordan.png";
+import Button from "@material-ui/core/Button";
 
 function AboutPage() {
     return (
@@ -90,9 +91,16 @@ function AboutPage() {
                     <img className={about.pic} src={oscar} alt="oscar picture"/>
                 </div>
             </div>
-            
+            <div className={about.footer}>
+                <Button onClick={() => topFunction()} style={{"font-weight": "bold"}}>Back to top</Button>
+            </div>
         </div>
     )
+}
+
+function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
 export default AboutPage;

@@ -38,3 +38,8 @@
 .text .right {
     padding: 0 4vh 0 7vh;
 }
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
