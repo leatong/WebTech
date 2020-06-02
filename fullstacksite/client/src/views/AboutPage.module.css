@@ -1,0 +1,40 @@
+.tile {
+    max-height: 90vh;
+    display: inline-flex;
+    flex-direction: row;
+    position: relative;
+    margin: 5vh;
+    padding: 5vh;
+}
+
+.image {
+    width: 120vh;
+}
+
+.pic {
+    width: 100%;
+    height: auto;
+}
+
+.subtitle {
+    font-family: "Californian FB", monospace;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.content {
+    font-family: "Californian FB", serif;
+    font-size: 3vh;
+}
+
+.text {
+    width: 60vh;
+}
+
+.text .left {
+    padding: 0 7vh 0 4vh;
+}
+
+.text .right {
+    padding: 0 4vh 0 7vh;
+}
