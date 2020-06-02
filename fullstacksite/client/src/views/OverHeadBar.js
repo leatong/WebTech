@@ -9,6 +9,7 @@ function OverHeadBar(props) {
             <ClickHeadBar path='music' name='MUSIC' currentPage={props.currentPage}/>
             <ClickHeadBar path='tour' name='TOUR' currentPage={props.currentPage}/>
             <ClickHeadBar path='merch' name='SHOP' currentPage={props.currentPage}/>
+            <ClickHeadBar path='about' name='ABOUT' currentPage={props.currentPage}/>
             <hr style={{backgroundColor: '#FF7A51', border:'transparent', height:'5px', margin:'-3px'}}/>
         </div>
     )
