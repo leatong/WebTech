@@ -2,10 +2,10 @@
     height: 90vh;
     display: flex;
     flex-direction: row;
-    position: absolute;
+    position: relative;
     margin: 5vh;
     padding: 5vh;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .tile {
