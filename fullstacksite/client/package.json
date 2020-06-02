@@ -16,7 +16,7 @@
     "react-scripts": "3.4.1",
     "sqlite": "^3.0.6"
   },
-  "proxy": "http://localhost:3001/",
+  "proxy": "https://localhost:3001/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
