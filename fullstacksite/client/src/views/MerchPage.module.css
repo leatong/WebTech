@@ -4,17 +4,20 @@
     flex-direction: row;
     position: relative;
     margin: 5vh;
-    padding: 5vh;
+    padding: 5vh 3vh 0 3vh;
     justify-content: space-evenly;
 }
 
 .tile {
     display: flex;
     flex-direction: column;
+    width: 50vh;
 }
 
 .pic {
+    object-fit: contain;
     height: 50vh;
+    /*width: 100%;*/
 }
 
 .tag {

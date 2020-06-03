@@ -6,6 +6,8 @@ import Tshirt1 from "../assets/Tshirt1-square.jpg";
 import Album1 from "../assets/album1.png";
 import single1 from "../assets/honey.png";
 import single2 from "../assets/lalalemon.png";
+import Tshirt2 from "../assets/cat_whitetshirtfront.png";
+import hat from "../assets/cat_capfront.png";
 
 function MerchPage(){
     return (
@@ -29,6 +31,14 @@ function MerchPage(){
                 <div className={merch.tile}>
                     <img className={merch.pic} src={Tshirt1} alt='White Tee'/>
                     <Tag name='tshirt1' description='White Tee' price='£ 3.99'/>
+                </div>
+                <div className={merch.tile}>
+                    <img className={merch.pic} src={Tshirt2} alt='Cat white Tee'/>
+                    <Tag name='tshirt2' description='Cat white Tee' price='£ 3.99'/>
+                </div>
+                <div className={merch.tile}>
+                    <img className={merch.pic} src={hat} alt='Cat hat'/>
+                    <Tag name='hat' description='cat hat' price='£ 2.99'/>
                 </div>
             </div>
         </div>
