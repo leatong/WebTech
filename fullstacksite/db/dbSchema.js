@@ -4,10 +4,16 @@ module.exports.dbSchema = `
         subs_email TEXT NOT NULL UNIQUE
     );
     CREATE TABLE IF NOT EXISTS Products (
-        product_id INTEGER PRIMARY KEY,
-        product_name TEXT NOT NULL,
-        product_price INTEGER NOT NULL,
-        product_desc TEXT NOT NULL
+        id INTEGER PRIMARY KEY,
+        name TEXT NOT NULL,
+        price REAL NOT NULL,
+        description TEXT NOT NULL
+    );
+    CREATE TABLE IF NOT EXISTS Product_Pics (
+        id INTEGER PRIMARY KEY,
+        product_id INTEGER NOT NULL,
+        picture TEXT NOT NULL,
+        FOREIGN KEY(product_id) REFERENCES Products(id)
     );
     CREATE TABLE IF NOT EXISTS Customers (
         cust_id INTEGER PRIAMRY KEY,
@@ -42,6 +48,6 @@ module.exports.dbSchema = `
         product_id INTEGER NOT NULL,
         quantity INTEGER NOT NULL,
         FOREIGN KEY(order_id) REFERENCES Cust_Orders(order_id),
-        FOREIGN KEY(product_id) REFERENCES Products(product_id)
+        FOREIGN KEY(product_id) REFERENCES Products(id)
     );
     `
