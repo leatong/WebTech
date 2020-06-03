@@ -9,7 +9,20 @@ import single2 from "../assets/lalalemon.png";
 import Tshirt2 from "../assets/cat_whitetshirtfront.png";
 import hat from "../assets/cat_capfront.png";
 
+// Only put 3 products on one line
 function MerchPage(){
+    fetch(('/api/products'), {
+        method: 'GET',
+        headers: {
+            'Content-Type': 'application/json'
+        },body: JSON.stringify({
+            id: ,
+            name: ,
+            price
+        })
+    }).then((res) => {
+        console.log(res)
+    }).catch(err => console.log(err));
     return (
         <div>
             <OverHeadBar currentPage='SHOP'/>
