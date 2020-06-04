@@ -10,52 +10,60 @@ import Tshirt2 from "../assets/cat_whitetshirtfront.png";
 import hat from "../assets/cat_capfront.png";
 
 // Only put 3 products on one line
-function MerchPage(){
-    fetch(('/api/products'), {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
-        },body: JSON.stringify({
-            id: ,
-            name: ,
-            price
-        })
-    }).then((res) => {
-        console.log(res)
-    }).catch(err => console.log(err));
-    return (
-        <div>
-            <OverHeadBar currentPage='SHOP'/>
-            <div className={merch.overview}>
-                <div className={merch.tile}>
-                    <img className={merch.pic} src={Album1} alt='Album1 Cover'/>
-                    <Tag name='album1' description='Tangerine Rye - Album' price='£ 2.99'/>
-                </div>
-                <div className={merch.tile}>
-                    <img className={merch.pic} src={single1} alt='Single1 Cover'/>
-                    <Tag name='single1' description='La La Lemon - Single' price='£ 0.99'/>
-                </div>
-                <div className={merch.tile}>
-                    <img className={merch.pic} src={single2} alt='Single2 Cover'/>
-                    <Tag name='single2' description='Honey - Single' price='£ 0.99'/>
-                </div>
+class MerchPage extends Component {
+    state = {
+        loading: true
+    };
+
+
+    async componentDidMount() {
+        const response = await fetch('/api/products');
+        const products = await response.json();
+        console.log(products);
+    }
+
+    /*getProducts().catch(error => {
+        console.log('error!!!');
+        console.error(error);
+    });*/
+    render () {
+        return (
+            <div>
+                {this.state.loading ? <div>loading...</div> : <div>products</div>}
             </div>
-            <div className={merch.overview}>
-                <div className={merch.tile}>
-                    <img className={merch.pic} src={Tshirt1} alt='White Tee'/>
-                    <Tag name='tshirt1' description='White Tee' price='£ 3.99'/>
+            /*<div>
+                <OverHeadBar currentPage='SHOP'/>
+                <div className={merch.overview}>
+                    <div className={merch.tile}>
+                        <img className={merch.pic} src={Album1} alt='Album1 Cover'/>
+                        <Tag name='album1' description='Tangerine Rye - Album' price='£ 2.99'/>
+                    </div>
+                    <div className={merch.tile}>
+                        <img className={merch.pic} src={single1} alt='Single1 Cover'/>
+                        <Tag name='single1' description='La La Lemon - Single' price='£ 0.99'/>
+                    </div>
+                    <div className={merch.tile}>
+                        <img className={merch.pic} src={single2} alt='Single2 Cover'/>
+                        <Tag name='single2' description='Honey - Single' price='£ 0.99'/>
+                    </div>
                 </div>
-                <div className={merch.tile}>
-                    <img className={merch.pic} src={Tshirt2} alt='Cat white Tee'/>
-                    <Tag name='tshirt2' description='Cat white Tee' price='£ 3.99'/>
+                <div className={merch.overview}>
+                    <div className={merch.tile}>
+                        <img className={merch.pic} src={Tshirt1} alt='White Tee'/>
+                        <Tag name='tshirt1' description='White Tee' price='£ 3.99'/>
+                    </div>
+                    <div className={merch.tile}>
+                        <img className={merch.pic} src={Tshirt2} alt='Cat white Tee'/>
+                        <Tag name='tshirt2' description='Cat white Tee' price='£ 3.99'/>
+                    </div>
+                    <div className={merch.tile}>
+                        <img className={merch.pic} src={hat} alt='Cat hat'/>
+                        <Tag name='hat' description='cat hat' price='£ 2.99'/>
+                    </div>
                 </div>
-                <div className={merch.tile}>
-                    <img className={merch.pic} src={hat} alt='Cat hat'/>
-                    <Tag name='hat' description='cat hat' price='£ 2.99'/>
-                </div>
-            </div>
-        </div>
-    );
+            </div>*/
+        );
+    }
 }
 
 
