@@ -7,6 +7,7 @@ import Album1 from "../assets/album1.png";
 import single1 from "../assets/honey.png";
 import single2 from "../assets/lalalemon.png";
 import Tshirt2 from "../assets/cat_whitetshirtfront.png";
+import IconBar from './IconBar';
 import hat from "../assets/cat_capfront.png";
 
 function MerchPage(){
@@ -41,6 +42,7 @@ function MerchPage(){
                     <Tag name='hat' description='cat hat' price='£ 2.99'/>
                 </div>
             </div>
+            <IconBar />
         </div>
     );
 }
