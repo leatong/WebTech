@@ -1,4 +1,5 @@
 import OverHeadBar from "./OverHeadBar";
+import IconBar from './IconBar';
 import React from "react";
 import about from "./AboutPage.module.css";
 import bandPic from "../assets/bandpic.jpg";
@@ -94,6 +95,7 @@ function AboutPage() {
             <div className={about.footer}>
                 <Button onClick={() => topFunction()} style={{"font-weight": "bold"}}>Back to top</Button>
             </div>
+            <IconBar />
         </div>
     )
 }
