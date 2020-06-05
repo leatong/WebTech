@@ -13,7 +13,7 @@ async function create() {
         await db.run("INSERT INTO Subscribers (subs_email) VALUES ('test2@hotmail.com')");
         console.log(await db.all("SELECT * FROM Subscribers"));
         await db.run("INSERT INTO Products (name, price, description) VALUES ('Tangerine Rye White Tee', 15, 'Vintage white T-shirt with Tangerine Rye logo')");
-        await db.run("INSERT INTO Products (name, price, description) VALUES ('La La Lemon - Single', 0.99, 'The first ingredient in your jar of \"Sticky\", a summer-set love story laden with pop hooks, homaging Stax and Motown with sprinkles of contemporary Soul and RnB!')");
+        await db.run("INSERT INTO Products (name, price, description) VALUES ('La La Lemonade - Single', 0.99, 'The first ingredient in your jar of \"Sticky\", a summer-set love story laden with pop hooks, homaging Stax and Motown with sprinkles of contemporary Soul and RnB!')");
         await db.run("INSERT INTO Products (name, price, description) VALUES ('Honey - Single', 0.99, 'The second ingredient in your jar of \"Sticky\" is a lttle bit of HONEY! Fuzzed out bluesy garage rock meets classic Funk.')");
         await db.run("INSERT INTO Products (name, price, description) VALUES ('Tangerine Rye - Album', 2.99, 'Our first self-titled and self-released album! Filled with rock and roll passion.')");
         await db.run("INSERT INTO Products (name, price, description) VALUES ('Fake Merch Cat Tee', 15, 'Fake white T-shirt merchandise with a random home-made cat SVG logo!')");
@@ -26,7 +26,7 @@ async function create() {
         await db.run("INSERT INTO Product_Pics (product_id, picture) VALUES (5, 'cat_whitetshirtfront.png')");
         await db.run("INSERT INTO Product_Pics (product_id, picture) VALUES (5, 'cat_whitetshirtback.png')");
         await db.run("INSERT INTO Product_Pics (product_id, picture) VALUES (6, 'cat_capfront.png')");
-        await db.run("INSERT INTO Product_Pics (product_id, picture) VALUES (6, 'cat_capback.png')");
+        await db.run("INSERT INTO Product_Pics (product_id, picture) VALUES (6, 'cat_capside.png')");
         console.log(await db.all("SELECT * FROM Product_Pics"));
     } catch(err) { console.log(err); }
 }
