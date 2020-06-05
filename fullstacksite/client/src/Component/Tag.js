@@ -6,9 +6,9 @@ function Tag(props) {
     return(
         <div className={merch.tile}>
             <div className={merch.tag}>
-                <p>{props.description}</p>
-                <p>{props.price}</p>
-                <ClickDetailButton path={props.name}/>
+                <p className={merch.name}>{props.name}</p>
+                <p className={merch.price}>{props.price}</p>
+                <ClickDetailButton path={props.id}/>
             </div>
         </div>
     )

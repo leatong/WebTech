@@ -1,28 +1,38 @@
 .overview {
-    height: 90vh;
-    display: flex;
-    flex-direction: row;
+    height: 400px;
     position: relative;
-    margin: 5vh;
-    padding: 5vh 3vh 0 3vh;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    margin: 50px;
+    padding: 50px 30px 0 30px;
 }
 
 .tile {
+    height: inherit;
     display: flex;
     flex-direction: column;
-    width: 50vh;
+    max-width: 200px;
+    margin-right: 20px;
+    margin-bottom: 30px;
+    justify-items: flex-end;
 }
 
 .pic {
     object-fit: contain;
-    height: 50vh;
-    /*width: 100%;*/
+    height: 200px;
 }
 
 .tag {
+    height: 100%;
+    margin: 2px 0 0 0;
+}
+
+.tag .name {
     font-weight: bolder;
-    font-size: 3vh;
-    margin: 2vh 2vh 0 2vh;
-    padding: 0;
+    font-size: 20px;
+    height: 50px;
+}
+
+.tag .price {
+    font-size: 18px;
 }

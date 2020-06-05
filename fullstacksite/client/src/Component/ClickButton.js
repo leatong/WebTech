@@ -15,7 +15,7 @@ export function ClickHomeButton(props) {
 export function ClickDetailButton(props) {
     return (
         <Link to={`/merch?id=${props.path}`} style={{textDecoration: 'none'}}>
-            <Button variant='contained' style={{width: '50vh'}}>
+            <Button variant='contained' style={{width: '200px', margin: '2px', padding: 0}}>
                 DETAILS
             </Button>
         </Link>
@@ -27,7 +27,7 @@ export function ClickHeadBar(props) {
         return (
             <Link to={`/${props.path}`} style={{textDecoration: 'none'}}>
                 <Button variant='contained' disabled
-                        style={{background:'#FF7A51', color:'white', width: '20vh', fontSize: '3vh'}}>
+                        style={{background:'#FF7A51', color:'white', width: '120px', fontSize: '20px'}}>
                     {props.name}
                 </Button>
             </Link>
@@ -36,7 +36,7 @@ export function ClickHeadBar(props) {
         return (
             <Link to={`/${props.path}`} style={{textDecoration: 'none'}}>
                 <Button color="inherit"
-                        style={{color: 'tomato', width: '20vh', fontSize: '3vh'}}>
+                        style={{color: 'tomato', width: '120px', fontSize: '20px'}}>
                     {props.name}
                 </Button>
             </Link>
