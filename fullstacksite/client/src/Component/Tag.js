@@ -8,7 +8,6 @@ function Tag(props) {
             <div className={merch.tag}>
                 <p className={merch.name}>{props.name}</p>
                 <p className={merch.price}>{props.price}</p>
-                <ClickDetailButton path={props.id}/>
             </div>
         </div>
     )

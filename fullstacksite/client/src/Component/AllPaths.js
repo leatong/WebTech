@@ -14,7 +14,7 @@ function AllPaths() {
             <Route path='/music' render={MusicPage} />
             <Route path='/tour' render={TourPage} />
             <Route path='/about' exact render={AboutPage} />
-            <Route path='/merch?id=:id' exact component={DetailPage} />
+            <Route path='/merch/:id' exact component={DetailPage} />
             <Route path='/merch' exact component={MerchPage} />
         </div>
     )

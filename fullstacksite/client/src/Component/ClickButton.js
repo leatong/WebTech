@@ -14,7 +14,7 @@ export function ClickHomeButton(props) {
 
 export function ClickDetailButton(props) {
     return (
-        <Link to={`/merch?id=${props.path}`} style={{textDecoration: 'none'}}>
+        <Link to={`/merch/${props.path}`} style={{textDecoration: 'none'}}>
             <Button variant='contained' style={{width: '200px', margin: '2px', padding: 0}}>
                 DETAILS
             </Button>

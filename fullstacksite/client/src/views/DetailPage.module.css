@@ -1,0 +1,86 @@
+.overview {
+    max-height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: normal;
+    position: relative;
+    padding:  15vh 15vw;
+}
+
+.image {
+    width: 50vw;
+    max-height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.left {
+    object-fit: contain;
+    width: 100%;
+    height: auto;
+    margin: 1vh 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.smallpic {
+    height: 5vh;
+    width: 5vw;
+    margin: 20px 0;
+
+}
+
+.largepic {
+    object-fit: fill;
+    width: 100%;
+}
+
+.right {
+    width: 35vw;
+    height: auto;
+    margin: 0 50px 0 20px;
+}
+
+.text {
+    width: 50vw;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3vw;
+}
+
+.text .name {
+    width: 25vw;
+    height: auto;
+    font-weight: bold;
+    font-family: "Arial Narrow", serif ;
+    font-size: 26px;
+    margin-bottom: 2vh;
+}
+
+.text .description {
+    width: 25vw;
+    height: auto;
+    font-family: "Arial Narrow", serif ;
+    font-size: 18px;
+    margin-bottom: 2vh;
+}
+
+.text .price {
+    height: 10vh;
+    font-weight: bold;
+    font-family: "Arial Narrow", serif ;
+    font-size: 26px;
+}
+
+.text .size {
+
+}
+
+.text .amount {
+
+}
+
+.text .button {
+
+}
