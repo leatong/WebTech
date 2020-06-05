@@ -16,6 +16,7 @@ router.get('/', function(req, res){
         try {
             db = await sqlite.open(path.join(__dirname, "../db/data.db"));
             var subs = await db.all("SELECT * FROM Subscribers");
+            db.close();
             return subs;
         } catch(err) { console.log(err); }
     }
@@ -36,6 +37,7 @@ router.post('/', function(req, res){
             const obj = await JSON.parse(JSON.stringify(sub));
             await sql.run(obj.email);
             await sql.finalize();
+            db.close();
         } catch(err) { console.log(err); }
     }
 });
