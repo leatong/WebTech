@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import OverHeadBar from "./OverHeadBar";
 import detailPage from "./DetailPage.module.css";
 import Button from "@material-ui/core/Button";
-import {OutlinedButton} from "./ButtonStyle";
 
 class DetailPage extends Component{
     state = {
@@ -10,7 +9,8 @@ class DetailPage extends Component{
         details: null,
         picId: 0,
         size: 'S',
-        amount: 0
+        count: 0,
+        isSaved: false
     };
 
     async componentDidMount() {
@@ -21,24 +21,48 @@ class DetailPage extends Component{
         console.log(this.state.details.length);
     }
 
-
     decrement = () => {
         this.setState({
-            amount: this.state.amount<=0? 0 : this.state.amount-1
+            count: this.state.count<=0? 0 : this.state.count-1
         })
     }
 
     increment = () => {
         this.setState({
-            amount: this.state.amount+1
+            count: this.state.count+1
         })
     }
 
     addToCart = () => {
-        // ---------------------------
-        // Continue here
-        // ---------------------------
+        let cart = localStorage.getItem('myCart');
+        if (cart) {
+            let arr = JSON.parse(cart);
+            let exists = false;
+            for (let i=0; i<arr.length; i++) {
+                if (arr[i].id === this.props.match.params.id && arr[i].size===this.state.size) {
+                    arr[i].count += this.state.count;
+                    exists = true;
+                    i=arr.length; // break out of the loop
+                }
+                localStorage.setItem('myCart', JSON.stringify(arr));
+            }
+            if (!exists) {
+                localStorage.setItem('myCart', JSON.stringify(this.updateStorage(arr)));
+            }
+        } else {
+            let arr =[];
+            localStorage.setItem('myCart', JSON.stringify(this.updateStorage(arr)));
+        }
+        this.setState({isSaved: true});
         alert('Added to shopping cart')
+    }
+
+    updateStorage = (arr) => {
+        const {name, price, picture} = this.state.details[0];
+        var obj = {id: this.props.match.params.id, name: name, picture: picture, size: this.state.size,
+            count: this.state.count, price: price, cost: price*this.state.count};
+        arr.push(obj);
+        return arr;
     }
 
     render() {
@@ -86,15 +110,15 @@ class DetailPage extends Component{
                                 L
                             </Button>
                         </div>
-                        <div className={detailPage.amountbox}>
+                        <div className={detailPage.countbox}>
                             <button className={detailPage.incrementButton} id="decrement" onClick={this.decrement}>-</button>
-                            <input className={detailPage.amount} type="number" value={this.state.amount} readOnly={true}/>
+                            <input className={detailPage.count} type="number" value={this.state.count} readOnly={true}/>
                             <button className={detailPage.incrementButton} id="increment" onClick={this.increment}>+</button>
                         </div>
                         <div className={detailPage.cartButton}>
                             <Button variant='outlined' color="default"
                                     style={{background: 'white', width: '150px', height: '50px', fontWeight: 'bold'}}
-                                    onClick={this.state.amount>0? this.addToCart : null}>
+                                    onClick={this.state.count>0? this.addToCart : null}>
                                 Add to cart
                             </Button>
                         </div>

@@ -6,6 +6,7 @@ import MerchPage from "../views/MerchPage";
 import TourPage from "../views/TourPage";
 import AboutPage from "../views/AboutPage";
 import DetailPage from "../views/DetailPage";
+import ShoppingCartPage from "../views/ShoppingCartPage";
 
 function AllPaths() {
     return (
@@ -16,6 +17,7 @@ function AllPaths() {
             <Route path='/merch' exact component={MerchPage} />
             <Route path='/about' exact render={AboutPage} />
             <Route path='/merch/:id' exact component={DetailPage} />
+            <Route path='.cart' exact component={ShoppingCartPage} />
         </div>
     )
 }
