@@ -15,6 +15,12 @@ module.exports.dbSchema = `
         picture TEXT NOT NULL,
         FOREIGN KEY(product_id) REFERENCES Products(id)
     );
+    CREATE TABLE IF NOT EXISTS Tour_Dates (
+        id INTEGER PRIMARY KEY,
+        city TEXT NOT NULL,
+        country TEXT NOT NULL,
+        date TEXT NOT NULL
+    );
     CREATE TABLE IF NOT EXISTS Customers (
         cust_id INTEGER PRIAMRY KEY,
         cust_firstname TEXT NOT NULL,
@@ -40,6 +46,7 @@ module.exports.dbSchema = `
     CREATE TABLE IF NOT EXISTS Cust_Orders (
         order_id INTEGER PRIMARY KEY,
         cust_id INTEGER NOT NULL,
+        date TEXT NOT NULL,
         FOREIGN KEY(cust_id) REFERENCES Customers(cust_id)
     );
     CREATE TABLE IF NOT EXISTS Order_Items (

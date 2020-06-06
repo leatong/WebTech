@@ -1,5 +1,4 @@
 .center {
-  height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -8,11 +7,21 @@
   font-size: calc(10px + 2vmin);
 }
 
-.logo {
-    padding-top: 15px;
-    padding-bottom: 5px;
-    height: 18vmin;
-    pointer-events: none;
+.embed {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.youtube {
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .youtube {
+    width: 100%;
+  }
 }
 
 .img {

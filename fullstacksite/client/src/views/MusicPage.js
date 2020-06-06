@@ -13,7 +13,6 @@ function MusicPage() {
         <div>
             <OverHeadBar currentPage='MUSIC'/>
             <div className={music.center}>
-                <img className={music.logo} src={logo} alt="Tangerine Rye logo" />
                 <div className={music.vinyl}>
                     <img className={music.img} src={bandpic}
                          alt="Tangerine Rye members" />
@@ -24,6 +23,13 @@ function MusicPage() {
                     <img className={music.honey} src={honey}
                          alt="Honey song cover" />
                 </div>
+            </div>
+            <div className={music.embed}>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/haBxkGrYPUI" frameborder="0" 
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                    className={music.youtube}></iframe>
+                <iframe src="https://open.spotify.com/embed/artist/6N7HQGSTngvAUUqDquoXfI" 
+                    width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                    
             </div>
             <IconBar />
         </div>

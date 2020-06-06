@@ -15,10 +15,11 @@ router.get('/', function(req, res){
    async function getProducts() {
        try {
            db = await sqlite.open(path.join(__dirname, "../db/data.db"));
-           var products = await db.all("SELECT P.*, Product_Pics.picture " +
-           "FROM Products AS P " +
-           "INNER JOIN Product_Pics ON Product_Pics.product_id = P.id " +
-           "GROUP BY P.id");
+           var products = await db.all(
+               "SELECT P.*, Product_Pics.picture " +
+                "FROM Products AS P " +
+                "INNER JOIN Product_Pics ON Product_Pics.product_id = P.id " +
+                "GROUP BY P.id");
            await db.close();
            return products;
        } catch(err) { console.log(err); }
