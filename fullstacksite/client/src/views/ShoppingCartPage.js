@@ -10,7 +10,7 @@ class ShoppingCartPage extends Component {
     render() {
         return (
             <div>
-                <OverHeadBar currentPage='TOUR'/>
+                <OverHeadBar currentPage='cart'/>
                 <IconBar />
             </div>
         );

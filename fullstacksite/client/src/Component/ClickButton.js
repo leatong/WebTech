@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import React, {Component} from 'react';
 import { OutlinedButton } from '../views/ButtonStyle'
 import Button from "@material-ui/core/Button";
+import ShoppingCartOutlinedIcon from '@material-ui/icons/ShoppingCartOutlined';
 
 export function ClickHomeButton(props) {
     return (
@@ -22,7 +23,7 @@ export function ClickDetailButton(props) {
 }
 
 export function ClickHeadBar(props) {
-    if (props.name === props.currentPage) {
+    if (props.path === props.currentPage) {
         return (
             <Link to={`/${props.path}`} style={{textDecoration: 'none'}}>
                 <Button variant='contained' disabled
@@ -42,3 +43,4 @@ export function ClickHeadBar(props) {
         )
     }
 }
+

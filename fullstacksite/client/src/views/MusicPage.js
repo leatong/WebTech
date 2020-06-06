@@ -11,7 +11,7 @@ import OverHeadBar from "./OverHeadBar";
 function MusicPage() {
     return (
         <div>
-            <OverHeadBar currentPage='MUSIC'/>
+            <OverHeadBar currentPage='music'/>
             <div className={music.center}>
                 <div className={music.vinyl}>
                     <img className={music.img} src={bandpic}

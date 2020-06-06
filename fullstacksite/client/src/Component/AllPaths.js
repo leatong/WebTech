@@ -12,12 +12,12 @@ function AllPaths() {
     return (
         <div>
             <Route path='/' exact render={HomePage} />
-            <Route path='/music' render={MusicPage} />
-            <Route path='/tour' render={TourPage} />
+            <Route path='/music' exact render={MusicPage} />
+            <Route path='/tour' exact render={TourPage} />
             <Route path='/merch' exact component={MerchPage} />
             <Route path='/about' exact render={AboutPage} />
             <Route path='/merch/:id' exact component={DetailPage} />
-            <Route path='.cart' exact component={ShoppingCartPage} />
+            <Route path='/cart' exact component={ShoppingCartPage} />
         </div>
     )
 }

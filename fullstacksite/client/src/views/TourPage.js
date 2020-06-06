@@ -5,7 +5,7 @@ import IconBar from './IconBar';
 function TourPage() {
     return (
         <div>
-            <OverHeadBar currentPage='TOUR'/>
+            <OverHeadBar currentPage='tour'/>
             <IconBar />
         </div>
     );

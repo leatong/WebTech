@@ -11,7 +11,7 @@ import Button from "@material-ui/core/Button";
 function AboutPage() {
     return (
         <div>
-            <OverHeadBar currentPage='ABOUT'/>
+            <OverHeadBar currentPage='about'/>
             <div className={about.tile}>
                 <img className={about.image} src={bandPic} alt="band picture"/>
                 <div className={about.text}>

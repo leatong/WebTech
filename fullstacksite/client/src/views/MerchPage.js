@@ -21,7 +21,7 @@ class MerchPage extends Component {
 
         return (
             <div>
-                <OverHeadBar currentPage='SHOP'/>
+                <OverHeadBar currentPage='merch'/>
                 <div className={merch.overview}>
                     {this.state.productList.map((product) => {
                         return <Product product={product} key={product.id}/>})}

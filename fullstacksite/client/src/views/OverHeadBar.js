@@ -2,6 +2,15 @@ import React from "react";
 import headBar from "./OverHeadBar.module.css";
 import logo from '../assets/tangerinerye_logo.png';
 import {ClickHeadBar} from "../Component/ClickButton";
+import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
+
+function ShoppingCartIcon() {
+    return (
+        <div>
+            <ClickHeadBar path='cart' name={<ShoppingCartOutlinedIcon />} currentPage='cart'/>
+        </div>
+    )
+}
 
 function OverHeadBar(props) {
     return (
@@ -13,6 +22,9 @@ function OverHeadBar(props) {
             <ClickHeadBar path='tour' name='TOUR' currentPage={props.currentPage}/>
             <ClickHeadBar path='merch' name='SHOP' currentPage={props.currentPage}/>
             <ClickHeadBar path='about' name='ABOUT' currentPage={props.currentPage}/>
+            <div className={headBar.cart}>
+                <ClickHeadBar path='cart' name={<ShoppingCartOutlinedIcon />} currentPage={props.currentPage}/>
+            </div>
         </div>
     )
 }
