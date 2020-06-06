@@ -13,7 +13,6 @@ function MusicPage() {
         <div>
             <OverHeadBar currentPage='MUSIC'/>
             <div className={music.center}>
-                <img className={music.logo} src={logo} alt="Tangerine Rye logo" />
                 <div className={music.vinyl}>
                     <img className={music.img} src={bandpic}
                          alt="Tangerine Rye members" />
