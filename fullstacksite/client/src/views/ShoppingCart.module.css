@@ -1,0 +1,50 @@
+.overview {
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.productList {
+    width: 65vw;
+    display: grid;
+    grid-template-columns: minmax(auto, 1fr);
+    padding-left: 20%;
+    padding-right: 3vw;
+    overflow: scroll;
+}
+
+.productList::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 0;
+}
+
+.productList::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.product {
+    background-color: rgba(252,255,196,0.4);
+    width: 100%;
+    height: 100%;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.product .pic {
+    object-fit: contain;
+    width: 60%;
+    height: auto;
+    align-self: center;
+}
+
+.product .text {
+    width: 40%;
+}
+
+.forms {
+    width: 35vw;
+}

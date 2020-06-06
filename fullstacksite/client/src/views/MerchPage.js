@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Product from "../Component/Product";
 import OverHeadBar from "./OverHeadBar";
 import merch from "./MerchPage.module.css";
+import IconBar from "./IconBar";
 
 class MerchPage extends Component {
     state = {
@@ -16,8 +17,18 @@ class MerchPage extends Component {
     }
 
     render() {
-        if (this.state.loading) return <div>loading...</div>
-        if (!this.state.productList) return <div>no product to display</div>
+        if (this.state.loading) {
+            return (
+                <div>
+                    <OverHeadBar currentPage='merch'/>
+                    <div className={merch.overview}>
+                        loading...
+                    </div>
+                </div>
+            )}
+        if (!this.state.productList) {
+            return <div><OverHeadBar currentPage='merch'/>no product to display</div>
+        }
 
         return (
             <div>
@@ -26,6 +37,7 @@ class MerchPage extends Component {
                     {this.state.productList.map((product) => {
                         return <Product product={product} key={product.id}/>})}
                 </div>
+                <IconBar />
             </div>
         );
     }

@@ -34,6 +34,16 @@ class DetailPage extends Component{
     }
 
     addToCart = () => {
+        /*
+           if storage already exists
+                load existing cart
+                    if same product is added (same id same size)
+                        add up the count
+                    if different products
+                        push to the existing list
+           if no data exists
+                create new JSON array and store to local storage
+        */
         let cart = localStorage.getItem('myCart');
         if (cart) {
             let arr = JSON.parse(cart);
