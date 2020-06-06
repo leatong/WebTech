@@ -2,10 +2,10 @@
     height: 400px;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     margin: 50px;
     padding: 0 30px 30px 30px;
-    /*justify-content: space-evenly;*/
+    justify-content: center;
 }
 
 .tile {
