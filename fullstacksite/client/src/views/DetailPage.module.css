@@ -16,19 +16,20 @@
 }
 
 .left {
-    object-fit: contain;
-    width: 100%;
-    height: auto;
-    margin: 1vh 0;
+    width: 5vw;
+    margin: 1vh 2vw;
     display: flex;
     flex-direction: column;
 }
 
 .smallpic {
-    height: 5vh;
-    width: 5vw;
-    margin: 20px 0;
+    width: 100%;
+    height: auto;
+    margin: 20px 1vw;
+}
 
+.smallpic:hover {
+    cursor: pointer;
 }
 
 .largepic {
@@ -67,20 +68,83 @@
 }
 
 .text .price {
-    height: 10vh;
+    height: 5vh;
     font-weight: bold;
     font-family: "Arial Narrow", serif ;
     font-size: 26px;
 }
 
-.text .size {
+.text .sizebox {
+    width: 250px;
+    height: 60px;
+    margin: 4vh 0 4vh 0;
+    display: flex;
+    flex-direction: row;
+}
 
+.text .sizebuttonInactive {
+    height: 50px;
+    margin-right: 5px;
+    font-size: 20px;
+    background: white;
+    color: black;
+}
+
+.text .sizebuttonInactive:hover {
+    cursor: pointer;
+    background: white;
+    color: black;
+}
+
+.text .sizebuttonActive {
+    height: 50px;
+    margin-right: 5px;
+    font-size: 20px;
+    background: #FF7A51;
+    color: white;
+}
+
+.text .sizebuttonActive:hover {
+    cursor: pointer;
+    background: #FF7A51;
+    color: white;
+}
+
+.text .amountbox {
+    height: 10vh;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
 }
 
 .text .amount {
+    width: 50px;
+    height: 30px;
+    margin: 0 5px 0 5px;
+}
+
+.text .incrementButton {
+    width: 30px;
+    height: 30px;
+}
+
+.text .incrementButton:hover {
+    cursor: pointer;
+}
+
+.text .cartButton {
+    width: 400px;
+    height: 50px;
+    margin-left: 0;
 
 }
 
-.text .button {
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
 
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
 }
