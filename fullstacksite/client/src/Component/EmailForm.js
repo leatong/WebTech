@@ -19,7 +19,6 @@ class EmailForm extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Success: ${this.state.userEmail} added`);
 
         if (this.state.userEmail) {
             fetch(('/api/subs'), {
@@ -34,6 +33,7 @@ class EmailForm extends Component {
                 console.log(res)
             }).catch(err => console.log(err));
         }
+        alert(`Success: ${this.state.userEmail} added`);
     };
 
     render() {

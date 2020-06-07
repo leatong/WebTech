@@ -4,6 +4,7 @@ import IconBar from "./IconBar";
 import Link from "@material-ui/core/Link";
 import CartProduct from "../Component/CartProduct";
 import cart from "../views/ShoppingCart.module.css";
+import CheckoutForm from "../Component/CheckoutForm";
 
 class ShoppingCartPage extends Component {
     state = {
@@ -45,12 +46,12 @@ class ShoppingCartPage extends Component {
                     <div className={cart.productList}>
                         {this.state.productList.map((product, index) => {
                             return (
-                                <CartProduct product={product} index={index} onRemove={this.removeItem}/>
+                                <CartProduct product={product} index={index} key={index} onRemove={this.removeItem}/>
                             )})
                         }
                     </div>
-                    <div className={cart.forms}>
-
+                    <div className={cart.right}>
+                        <CheckoutForm />
                     </div>
                 </div>
 
