@@ -8,12 +8,7 @@
 }
 
 .image {
-    width: 110vh;
-}
-
-.pic {
-    width: 100%;
-    height: auto;
+    width: 50%;
 }
 
 .subtitle {
@@ -28,7 +23,7 @@
 }
 
 .text {
-    width: 70vh;
+    width: 50%;
 }
 
 .text .left {
@@ -42,4 +37,33 @@
 .footer {
     display: flex;
     justify-content: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .tile {
+        flex-direction: column;
+        max-height: 145vh;
+        margin: 3vh;
+        padding: 3vh;
+    }
+
+    .image {
+        width: 100%;
+        order: 0;
+    }
+
+    .text {
+        width: 100%;
+        order: 1;
+        padding-top: 7vh;
+        padding-bottom: 7vh;
+    }
+
+    .text .left {
+        padding: 0 0 0 0;
+    }
+    
+    .text .right {
+        padding: 0 0 0 0;
+    }
 }

@@ -46,14 +46,10 @@ function AboutPage() {
                         </p>
                     </div>
                 </div>
-                <div className={about.image}>
-                    <img className={about.pic} src={jordan} alt="jordan picture"/>
-                </div>
+                <img className={about.image} src={jordan} alt="jordan picture"/>
             </div>
             <div className={about.tile}>
-                <div className={about.image}>
-                    <img className={about.pic} src={hal} alt="hal picture"/>
-                </div>
+                <img className={about.image} src={hal} alt="hal picture"/>
                 <div className={about.text}>
                     <div className={about.right}>
                         <p className={about.subtitle}>Hal</p>
@@ -88,9 +84,7 @@ function AboutPage() {
                         </p>
                     </div>
                 </div>
-                <div className={about.image}>
-                    <img className={about.pic} src={oscar} alt="oscar picture"/>
-                </div>
+                <img className={about.image} src={oscar} alt="oscar picture"/>
             </div>
             <div className={about.footer}>
                 <Button onClick={() => topFunction()} style={{"font-weight": "bold"}}>Back to top</Button>
