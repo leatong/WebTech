@@ -21,15 +21,22 @@ class ShoppingCartPage extends Component {
         this.setState({loading: false});
     }
 
+    removeItem = (index) => {
+        let arr = JSON.parse(localStorage.getItem('myCart'));
+        arr.splice(index,1);
+        localStorage.setItem('myCart', JSON.stringify(arr));
+        this.setState({productList: arr});
+    }
+
     render() {
         if (this.state.loading) return <div><OverHeadBar currentPage='cart'/>loading...</div>
-        if (!this.state.productList) {
+        if (!this.state.productList || this.state.productList.length===0) {
             return (
                 <div>
                     <OverHeadBar currentPage='cart'/>
                     <div>Empty cart</div>
                     <div>Go shopping</div>
-                    IconBar />
+                    <IconBar />
                 </div>);}
         return (
             <div>
@@ -38,9 +45,7 @@ class ShoppingCartPage extends Component {
                     <div className={cart.productList}>
                         {this.state.productList.map((product, index) => {
                             return (
-                                <div key={index}>
-                                    <CartProduct product={product} />
-                                </div>
+                                <CartProduct product={product} index={index} onRemove={this.removeItem}/>
                             )})
                         }
                     </div>

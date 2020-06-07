@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import OverHeadBar from "./OverHeadBar";
 import detailPage from "./DetailPage.module.css";
 import Button from "@material-ui/core/Button";
+import {UpdateCart} from "../Component/UpdateCart";
 
 class DetailPage extends Component{
     state = {
@@ -9,8 +10,7 @@ class DetailPage extends Component{
         details: null,
         picId: 0,
         size: 'S',
-        count: 0,
-        isSaved: false
+        count: 0
     };
 
     async componentDidMount() {
@@ -33,47 +33,7 @@ class DetailPage extends Component{
         })
     }
 
-    addToCart = () => {
-        /*
-           if storage already exists
-                load existing cart
-                    if same product is added (same id same size)
-                        add up the count
-                    if different products
-                        push to the existing list
-           if no data exists
-                create new JSON array and store to local storage
-        */
-        let cart = localStorage.getItem('myCart');
-        if (cart) {
-            let arr = JSON.parse(cart);
-            let exists = false;
-            for (let i=0; i<arr.length; i++) {
-                if (arr[i].id === this.props.match.params.id && arr[i].size===this.state.size) {
-                    arr[i].count += this.state.count;
-                    exists = true;
-                    i=arr.length; // break out of the loop
-                }
-                localStorage.setItem('myCart', JSON.stringify(arr));
-            }
-            if (!exists) {
-                localStorage.setItem('myCart', JSON.stringify(this.updateStorage(arr)));
-            }
-        } else {
-            let arr =[];
-            localStorage.setItem('myCart', JSON.stringify(this.updateStorage(arr)));
-        }
-        this.setState({isSaved: true});
-        alert('Added to shopping cart')
-    }
-
-    updateStorage = (arr) => {
-        const {name, price, picture} = this.state.details[0];
-        var obj = {id: this.props.match.params.id, name: name, picture: picture, size: this.state.size,
-            count: this.state.count, price: price, cost: price*this.state.count};
-        arr.push(obj);
-        return arr;
-    }
+    addToCart = () => {return UpdateCart(this.state, this.props.match.params.id)}
 
     render() {
         if (this.state.loading) return <div>loading...</div>

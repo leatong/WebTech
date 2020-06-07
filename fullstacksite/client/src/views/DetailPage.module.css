@@ -114,7 +114,7 @@
     color: white;
 }
 
-.text .amountbox {
+.amountbox {
     height: 6vh;
     width: 100%;
     display: flex;
@@ -122,18 +122,18 @@
     padding-top: 20px;
 }
 
-.text .amount {
+.amount {
     width: 60px;
     height: 100%;
     margin: 0 5px 0 5px;
 }
 
-.text .incrementButton {
+.incrementButton {
     width: 35px;
     height: 100%;
 }
 
-.text .incrementButton:hover {
+.incrementButton:hover {
     cursor: pointer;
 }
 

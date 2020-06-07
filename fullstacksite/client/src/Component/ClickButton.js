@@ -30,7 +30,6 @@ export function ClickHeadBar(props) {
                         style={{background:'#FF7A51', color:'white', width: '120px', height: '45px', fontSize: '20px'}}
                         endIcon={props.endIcon}>
                         {props.name}
-
                 </Button>
             </Link>
         )
