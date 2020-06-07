@@ -24,7 +24,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 // Express only serves static assets in production
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("client/build"));
+    app.use(express.static(("client/build")));
 }
 
 var httpsServer = https.createServer(credentials, app);
@@ -36,6 +36,14 @@ app.get('/', (req, res) => {
 app.use('/api/subs', subsRoutes);
 app.use('/api/products', productsRoutes);
 app.use('/api/tour', tourRoutes);
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(function(req, res) {
+    res.status(404).send('404: Page not Found');
+});
+app.use(function(error, req, res, next) {
+    res.status(500).send('500: Internal Server Error');
+  });
 
 httpsServer.listen(httpsPort, () => {
     console.log(`Https server at: https://localhost:${httpsPort}/`);

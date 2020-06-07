@@ -26,7 +26,7 @@ router.get('/', function(req, res){
    }
 });
 
-router.get('/:productId', function(req, res){
+router.get('/:productId(\\d+)?', function(req, res){
     getProduct()
     .then(function(subs){
         res.json(subs);

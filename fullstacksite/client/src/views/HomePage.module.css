@@ -10,8 +10,14 @@
 }
 
 .logo {
-  height: 25vmin;
+  width: 80%;
   pointer-events: none;
+}
+
+@media only screen and (min-width: 768px) {
+  .logo {
+      width: auto;
+  }
 }
 
 .email {

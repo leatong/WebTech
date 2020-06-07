@@ -1,5 +1,4 @@
 .overview {
-    height: 400px;
     position: relative;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -9,7 +8,6 @@
 }
 
 .tile {
-    height: inherit;
     width: 200px;
     display: flex;
     flex-direction: column;
