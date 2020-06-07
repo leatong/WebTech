@@ -22,9 +22,9 @@ function OverHeadBar(props) {
             <ClickHeadBar path='tour' name='TOUR' currentPage={props.currentPage}/>
             <ClickHeadBar path='merch' name='SHOP' currentPage={props.currentPage}/>
             <ClickHeadBar path='about' name='ABOUT' currentPage={props.currentPage}/>
-            <div className={headBar.cart}>
-                <ClickHeadBar path='cart' name={<ShoppingCartOutlinedIcon />} currentPage={props.currentPage}/>
-            </div>
+            {/* <div className={headBar.cart}> */}
+            <ClickHeadBar path='cart' name={<ShoppingCartOutlinedIcon />} currentPage={props.currentPage} />
+            {/* </div> */}
         </div>
     )
 }

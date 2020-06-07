@@ -24,6 +24,7 @@ class MerchPage extends Component {
                     <div className={merch.overview}>
                         loading...
                     </div>
+                    <IconBar />
                 </div>
             )}
         if (!this.state.productList) {

@@ -1,18 +1,7 @@
 .center {
-    min-height: 15px;
-    line-height: 15px;
-    text-align: center;
-    color: tomato;
-    background-color: transparent;
-    width: 100vw;
-    margin: 0 5px;
-    padding-bottom: 30px;
-}
-
-.center .cart {
     justify-items: flex-end;
-    text-align: end;
-    margin-top: -48px;
+    text-align: center;
+    padding-bottom: 30px;
 }
 
 .logo {
@@ -27,8 +16,4 @@
         height: 23vmin;
         width: auto;
     }
-}
-
-.overhead {
-    width: 20px;
 }

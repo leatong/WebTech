@@ -127,6 +127,9 @@
                     not get a valid authorised certificate.
                     We also have handled port numbers and integrating with client
                     with an /api route to handle get/post requests.
+                    We also handled URL parameter validation in /api/products/:productId
+                    by checking that productId is always an integer through regex. 
+                    The server also handles 404 and 500 errors.
                 </p>
             <li><b>A for Database</b></li>
                 <p>We have managed to insert data and extract it in
