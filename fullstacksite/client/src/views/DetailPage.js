@@ -95,7 +95,7 @@ class DetailPage extends Component{
                                 </div>)})}
                         </div>
                         <div className={detailPage.right} >
-                            <img className={detailPage.right}
+                            <img className={detailPage.largepic}
                                  src={`/assets/${this.state.details[this.state.picId].picture}`} />
                         </div>
                     </div>
@@ -120,14 +120,14 @@ class DetailPage extends Component{
                                 L
                             </Button>
                         </div>
-                        <div className={detailPage.countbox}>
+                        <div className={detailPage.amountbox}>
                             <button className={detailPage.incrementButton} id="decrement" onClick={this.decrement}>-</button>
-                            <input className={detailPage.count} type="number" value={this.state.count} readOnly={true}/>
+                            <input className={detailPage.amount} type="number" value={this.state.count} readOnly={true}/>
                             <button className={detailPage.incrementButton} id="increment" onClick={this.increment}>+</button>
                         </div>
                         <div className={detailPage.cartButton}>
                             <Button variant='outlined' color="default"
-                                    style={{background: 'white', width: '150px', height: '50px', fontWeight: 'bold'}}
+                                    style={{background: 'white', fontWeight: 'bold', width: '100%'}}
                                     onClick={this.state.count>0? this.addToCart : null}>
                                 Add to cart
                             </Button>
