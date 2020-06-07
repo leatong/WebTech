@@ -27,8 +27,10 @@ export function ClickHeadBar(props) {
         return (
             <Link to={`/${props.path}`} style={{textDecoration: 'none'}}>
                 <Button variant='contained' disabled
-                        style={{background:'#FF7A51', color:'white', width: '120px', height: '45px', fontSize: '20px'}}>
-                    {props.name}
+                        style={{background:'#FF7A51', color:'white', width: '120px', height: '45px', fontSize: '20px'}}
+                        endIcon={props.endIcon}>
+                        {props.name}
+
                 </Button>
             </Link>
         )
@@ -36,7 +38,8 @@ export function ClickHeadBar(props) {
         return (
             <Link to={`/${props.path}`} style={{textDecoration: 'none'}}>
                 <Button color="inherit"
-                        style={{color: 'tomato', width: '120px', height: '45px', fontSize: '20px'}}>
+                        style={{color: 'tomato', width: '120px', height: '45px', fontSize: '20px'}}
+                        endIcon={props.endIcon}>
                     {props.name}
                 </Button>
             </Link>

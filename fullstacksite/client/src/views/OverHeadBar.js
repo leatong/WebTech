@@ -17,14 +17,20 @@ function OverHeadBar(props) {
         <div className={headBar.center}>
             <img className={headBar.logo} src={logo} alt="Tangerine Rye logo" />
             <hr style={{backgroundColor: '#FF7A51', border:'transparent', height:'5px', margin:'-3px'}}/>
-            <ClickHeadBar path='' name='PORTAL' currentPage={props.currentPage}/>
-            <ClickHeadBar path='music' name='MUSIC' currentPage={props.currentPage}/>
-            <ClickHeadBar path='tour' name='TOUR' currentPage={props.currentPage}/>
-            <ClickHeadBar path='merch' name='SHOP' currentPage={props.currentPage}/>
-            <ClickHeadBar path='about' name='ABOUT' currentPage={props.currentPage}/>
-            {/* <div className={headBar.cart}> */}
-            <ClickHeadBar path='cart' name={<ShoppingCartOutlinedIcon />} currentPage={props.currentPage} />
-            {/* </div> */}
+            <div className={headBar.bar}>
+                <div className={headBar.side}></div>
+                <div className={headBar.buttons}>
+                    <ClickHeadBar path='' name='PORTAL' currentPage={props.currentPage}/>
+                    <ClickHeadBar path='music' name='MUSIC' currentPage={props.currentPage}/>
+                    <ClickHeadBar path='tour' name='TOUR' currentPage={props.currentPage}/>
+                    <ClickHeadBar path='merch' name='SHOP' currentPage={props.currentPage}/>
+                    <ClickHeadBar path='about' name='ABOUT' currentPage={props.currentPage}/>
+                    {/* <div className={headBar.cart}> */}
+                </div>
+                <div className={headBar.side}>
+                    <ClickHeadBar path='cart' name='cart' endIcon={<ShoppingCartOutlinedIcon />} currentPage={props.currentPage} />
+                </div> 
+            </div>
         </div>
     )
 }
