@@ -3,6 +3,7 @@ import Product from "../Component/Product";
 import OverHeadBar from "./OverHeadBar";
 import merch from "./MerchPage.module.css";
 import IconBar from "./IconBar";
+import headBar from "../views/OverHeadBar.module.css";
 
 class MerchPage extends Component {
     state = {
@@ -19,7 +20,7 @@ class MerchPage extends Component {
     render() {
         if (this.state.loading) {
             return (
-                <div>
+                <div className={headBar.overview}>
                     <OverHeadBar currentPage='merch'/>
                     <div className={merch.overview}>
                         loading...
@@ -28,11 +29,11 @@ class MerchPage extends Component {
                 </div>
             )}
         if (!this.state.productList) {
-            return <div><OverHeadBar currentPage='merch'/>no product to display</div>
+            return <div className={headBar.overview}><OverHeadBar currentPage='merch'/>no product to display</div>
         }
 
         return (
-            <div>
+            <div className={headBar.overview}>
                 <OverHeadBar currentPage='merch'/>
                 <div className={merch.overview}>
                     {this.state.productList.map((product) => {

@@ -9,6 +9,7 @@
 
 .image {
     width: 50vw;
+    min-width: 475px;
     height: 100%;
     padding-left: 20%;
     display: flex;
@@ -44,6 +45,7 @@
 
 .text {
     width: 50vw;
+    min-width: 475px;
     display: flex;
     flex-direction: column;
     padding-left: 3vw;
