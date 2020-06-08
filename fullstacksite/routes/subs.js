@@ -24,8 +24,8 @@ router.get('/', function(req, res){
 
 router.post('/', function(req, res){
     addSub(req.body)
-    .then(function(newSubs){
-        res.json(newSubs);
+    .then(function(addSub){
+        res.json(addSub);
     })
     .catch(function(err){
         res.send(err);
@@ -33,7 +33,7 @@ router.post('/', function(req, res){
     async function addSub(sub) {
         try {
             db = await sqlite.open(path.join(__dirname, "../db/data.db"));
-            var sql = await db.prepare("INSERT INTO Subscribers VALUES (?)");
+            var sql = await db.prepare("INSERT INTO Subscribers (subs_email) VALUES (?)");
             const obj = await JSON.parse(JSON.stringify(sub));
             await sql.run(obj.email);
             await sql.finalize();

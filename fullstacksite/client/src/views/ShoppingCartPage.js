@@ -44,24 +44,31 @@ class ShoppingCartPage extends Component {
     }
 
     checkoutCart = (childState) => {
-        //console.log(childState);
-        //         //-----------------------------------------
-        //         // GRACE LOOK HERE !!!!!!!!!!!!!!!!!!!!!!!!
-        //         /*if (this.state.userEmail) {
-        //             fetch(('/api/subs'), {
-        //                 method: 'POST',
-        //                 headers: {
-        //                     'Content-Type': 'application/json'
-        //                 },
-        //                 body: JSON.stringify({
-        //                     email: this.state.userEmail
-        //                 })
-        //             }).then((res) => {
-        //                 console.log(res)
-        //             }).catch(err => console.log(err));
-        //         }*/
-        //         alert(`Success: ${this.state.userEmail} added`);
-        //     };
+        console.log(childState);
+        var list = this.state.productList;
+        console.log(list);
+        fetch(('/api/orders/createNewOrder'), {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                firstName: childState.formCompulsory.firstName,
+                lastName: childState.formCompulsory.lastName,
+                email: childState.formCompulsory.email,
+                address1: childState.formCompulsory.address1,
+                city: childState.formCompulsory.city,
+                country: childState.formCompulsory.country,
+                postcode: childState.formCompulsory.postcode,
+                address2: childState.formOptional.address2,
+                address3: childState.formOptional.address3,
+                phone: childState.formOptional.phone,
+                products: this.state.productList,
+                totalcost: this.state.totalCost
+            })
+        }).then((res) => {
+            console.log(res)
+        }).catch(err => console.log(err));
         alert("Success");
         //console.log("passed to shoppingCartPage");
         //console.log(this.state);
@@ -99,7 +106,7 @@ class ShoppingCartPage extends Component {
                         }
                     </div>
                     <div className={cart.right}>
-                        <CheckoutForm onClear={this.emptyCart} onCheckout={this.checkoutCart} moeny={this.totalCost()}/>
+                        <CheckoutForm onClear={this.emptyCart} onCheckout={this.checkoutCart} money={this.totalCost()}/>
                     </div>
                 </div>
 

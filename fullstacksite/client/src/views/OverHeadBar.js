@@ -4,13 +4,13 @@ import logo from '../assets/tangerinerye_logo.png';
 import {ClickHeadBar} from "../Component/ClickButton";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
-function ShoppingCartIcon() {
-    return (
-        <div>
-            <ClickHeadBar path='cart' name={<ShoppingCartOutlinedIcon />} currentPage='cart'/>
-        </div>
-    )
-}
+// function ShoppingCartIcon() {
+//     return (
+//         <div>
+//             <ClickHeadBar path='cart' name={<ShoppingCartOutlinedIcon />} currentPage='cart'/>
+//         </div>
+//     )
+// }
 
 function OverHeadBar(props) {
     return (

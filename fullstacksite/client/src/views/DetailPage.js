@@ -52,12 +52,14 @@ class DetailPage extends Component{
                                 <div key={index}>
                                     <img className={detailPage.smallpic}
                                          onClick={()=>{this.setState({picId: index})}}
-                                         src={`/assets/${detail.picture}`}/>
+                                         src={`/assets/${detail.picture}`}
+                                         alt={name}/>
                                 </div>)})}
                         </div>
                         <div className={detailPage.right} >
                             <img className={detailPage.largepic}
-                                 src={`/assets/${this.state.details[this.state.picId].picture}`} />
+                                 src={`/assets/${this.state.details[this.state.picId].picture}`}
+                                 alt={name} />
                         </div>
                     </div>
                     <div className={detailPage.text}>

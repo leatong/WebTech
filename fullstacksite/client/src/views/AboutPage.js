@@ -14,7 +14,7 @@ function AboutPage() {
         <div className={headBar.overview}>
             <OverHeadBar currentPage='about'/>
             <div className={about.tile}>
-                <img className={about.image} src={bandPic} alt="band picture"/>
+                <img className={about.image} src={bandPic} alt="The band: Jordan (Guitarist/Vocalist), Hal (Bassist/Vocalist), Oscar (Drummer)"/>
                 <div className={about.text}>
                     <div className={about.right}>
                         <p className={about.subtitle}> The Band</p>
@@ -47,10 +47,10 @@ function AboutPage() {
                         </p>
                     </div>
                 </div>
-                <img className={about.image} src={jordan} alt="jordan picture"/>
+                <img className={about.image} src={jordan} alt="Jordan Susanto Guitarist"/>
             </div>
             <div className={about.tile}>
-                <img className={about.image} src={hal} alt="hal picture"/>
+                <img className={about.image} src={hal} alt="Hal Bassist"/>
                 <div className={about.text}>
                     <div className={about.right}>
                         <p className={about.subtitle}>Hal</p>
@@ -85,7 +85,7 @@ function AboutPage() {
                         </p>
                     </div>
                 </div>
-                <img className={about.image} src={oscar} alt="oscar picture"/>
+                <img className={about.image} src={oscar} alt="Oscar Drummer"/>
             </div>
             <div className={about.footer}>
                 <Button onClick={() => topFunction()} style={{"fontWeight": "bold"}}>Back to top</Button>

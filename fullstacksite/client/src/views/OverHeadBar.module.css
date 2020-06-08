@@ -27,7 +27,7 @@
 .logo {
     padding-top: 15px;
     padding-bottom: 20px;
-    width: 80%;
+    height: 30vmin;
     pointer-events: none;
 }
 
@@ -36,8 +36,7 @@
         min-width: 0;
     }
     .logo {
-        height: 30vmin;
-        width: auto;
+        width: 80%;
     }
     .buttons {
         max-width: min-content;

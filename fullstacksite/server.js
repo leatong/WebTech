@@ -18,6 +18,7 @@ var credentials = {
 var subsRoutes = require('./routes/subs');
 var productsRoutes = require('./routes/products');
 var tourRoutes = require('./routes/tour');
+var orderRoutes = require('./routes/orders');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -36,6 +37,7 @@ app.get('/', (req, res) => {
 app.use('/api/subs', subsRoutes);
 app.use('/api/products', productsRoutes);
 app.use('/api/tour', tourRoutes);
+app.use('/api/orders', orderRoutes);
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(function(req, res) {

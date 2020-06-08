@@ -38,7 +38,8 @@ class CartProduct extends Component {
             <div className={cart.product}>
                 <div className={cart.left}>
                     <div className={cart.picContainer}>
-                        <img className={cart.pic} src={`assets/${picture}`} />
+                        <img className={cart.pic} src={`assets/${picture}`}
+                            alt={name} />
                     </div>
                 </div>
                 <div className={cart.text}>
