@@ -88,8 +88,10 @@ class ShoppingCartPage extends Component {
             return (
                 <div>
                     <OverHeadBar currentPage='cart'/>
-                    <div>Empty cart</div>
-                    <div>Go shopping</div>
+                    <div className={cart.empty}>
+                        <p>Empty cart</p>
+                        <p>Go shopping!</p>
+                    </div>
                     <IconBar />
                 </div>);}
         return (
