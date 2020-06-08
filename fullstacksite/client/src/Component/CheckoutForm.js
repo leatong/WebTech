@@ -87,7 +87,7 @@ class CheckoutForm extends Component {
                         </div>
                     </div>
                     <div className={cart.fieldForm} style={{fontWeight: 'bold', fontSize: '20px', fontFamily: "'Arial Narrow', serif"}}>
-                        Total: £ {this.props.moeny}
+                        Total: £ {this.props.money}
                     </div>
                 </div>
                 <div className={cart.row}>
