@@ -28,7 +28,7 @@ class MerchPage extends Component {
                 </div>
             )}
         if (!this.state.productList) {
-            return <div><OverHeadBar currentPage='merch'/>no product to display</div>
+            return <div><OverHeadBar currentPage='merch'/>no product to display<IconBar /></div>
         }
 
         return (

@@ -16,7 +16,7 @@ function OverHeadBar(props) {
     return (
         <div className={headBar.center}>
             <img className={headBar.logo} src={logo} alt="Tangerine Rye logo" />
-            <hr style={{backgroundColor: '#FF7A51', border:'transparent', height:'5px', margin:'-3px'}}/>
+            <hr style={{backgroundColor: '#FF7A51', border:'transparent', height:'4px', margin:'-3px'}}/>
             <div className={headBar.bar}>
                 <div className={headBar.side}></div>
                 <div className={headBar.buttons}>

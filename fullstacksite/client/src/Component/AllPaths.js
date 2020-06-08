@@ -13,7 +13,7 @@ function AllPaths() {
         <div>
             <Route path='/' exact render={HomePage} />
             <Route path='/music' exact render={MusicPage} />
-            <Route path='/tour' exact render={TourPage} />
+            <Route path='/tour' exact component={TourPage} />
             <Route path='/merch' exact component={MerchPage} />
             <Route path='/about' exact render={AboutPage} />
             <Route path='/merch/:id' exact component={DetailPage} />
