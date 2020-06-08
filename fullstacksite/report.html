@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <title>Web Tech Assignment Report</title>
+        <style>
+            .img-center {
+                text-align: center;
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Assignment: Report</h1>
+        <h3>Contributors: Graciela Wissen Putri (tl19232),
+            Shuang Tong (nj19182)
+        </h3>
+        <p>This website was made for a dear friend's band, Tangerine Rye.</p>
+        <ul>
+            <li><b>A for HTML</b></li>
+                <p>We generated HTML with React. We chose React as we
+                   wanted to learn the industry standard.
+                </p>
+            <li><b>A for CSS</b></li>
+                <p>We generated CSS with React, and made
+                CSS modules stylesheet for each page. We also designed
+                responsive pages that resize on smaller screens.
+                The gradient animated background was also made with CSS.
+                We also investigated several issues with CSS and React:
+                <ul>
+                    <li>
+                    Font-awesome and material-ui icons behaved
+                    differently for style tags, solution was to
+                    make different functions that styled font-awesome
+                    icons with a div tag.
+                    </li>
+                </ul>
+                </p>
+            <li><b>A for JS</b></li>
+                <p>We have investigated eventListeners, eventHandlers,
+                    and browser routers with client-side JS framework, 
+                    React. We also created animation with CSS.
+                </p>
+            <li><b>A for PNG</b></li>
+                <p>All images in the assets folder were taken from
+                    the Tangerine Rye facebook page. Images had to be
+                    manually edited using Photoshop to create transparent
+                    backgrounds.
+                    <br>
+                    <span class="img-center" style="background-color: aqua;">
+                        <b>BEFORE</b>
+                    <img 
+                        src="client/src/assets/tangerinerye_logo_before.png" 
+                        alt="Tangerine Rye logo before manipulation"
+                        height="150" />
+                    <img 
+                        src="client/src/assets/tangerinerye_logo.png"
+                        alt="Tangerine Rye logo with transparent background"
+                        height="150" />
+                        <b>AFTER</b>
+                    </span>
+                    Album covers were also edited by cloning
+                    the background pattern and stamping to remove the 
+                    Tangerine Rye logo.
+                    <span class="img-center">
+                        <b>BEFORE</b>
+                    <img 
+                        src="client/src/assets/honey_before.jpg" 
+                        alt="Honey Single EP before manipulation"
+                        height="200" />
+                    <img 
+                        src="client/src/assets/honey.png"
+                        alt="Honey Single EP after manipulation"
+                        height="200" />
+                        <b>AFTER</b>
+                    <br>
+                        <b>BEFORE</b>
+                    <img 
+                        src="client/src/assets/lalalemonade_before.jpg" 
+                        alt="Honey Single EP before manipulation"
+                        height="200" />
+                    <img 
+                        src="client/src/assets/lalalemon.png"
+                        alt="Honey Single EP after manipulation"
+                        height="200" />
+                        <b>AFTER</b>
+                    </span>
+                </p>
+            <li><b>A for SVG</b></li>
+                <p>All icons taken from font-awesome and material-ui
+                    were SVG. As all the band logos were professionally 
+                    made, there was no real use for homemade SVG 
+                    designs. For the purpose of this assignment,
+                    we created a cat SVG logo with Inkscape (because one of the 
+                    contributors has 5 cats at home and is obsessed
+                    with cats!) and pasted it onto a t-shirt and a cap 
+                    as fake merchandise.
+                </p>
+                <p>
+                    <b>The original cat logo and its merchandise:</b>
+                </p>
+                <span class="img-center">
+                <img 
+                    src="client/src/assets/catLogo.svg" 
+                    alt="cat svg logo"
+                    width="300" />
+                <br>
+                <img 
+                    src="client/src/assets/cat_whitetshirtfront.png" 
+                    alt="cat logo on white t-shirt"
+                    width="300"/>
+                <img 
+                    src="client/src/assets/cat_capfront.png" 
+                    alt="cat logo on red cap"
+                    width="300"/>
+                </span>
+                <p>The cat logo was created using a combination of freehand drawings
+                    (to draw the whiskers), path transformations (cylinders into cat eyes;
+                    triangles to curve creating cat ears), as well as grouping and 
+                    duplicating objects to flip horizontally to create a symmetrical logo
+                    (this was done by dragging a guideline down the center to only create
+                    half the image first before duplicating object to create mirror image).
+                    Photoshop was used to paste logo onto t-shirt and cap mockups (PNG).
+                </p>
+            <li><b>A for Server</b></li>
+                <p>We have self-issued our own self-signed SSL certificate
+                    and keys, but as we have not gotten a domain name, we could
+                    not get a valid authorised certificate.
+                    We also have handled port numbers and integrating with client
+                    with an /api route to handle get/post requests.
+                    We also handled URL parameter validation in /api/products/:productId
+                    by checking that productId is always an integer through regex. 
+                    The server also handles 404 and 500 errors.
+                </p>
+            <li><b>A for Database</b></li>
+                <p>We have managed to insert data and extract it in
+                    localhost:3001/api/subs, by using async/await style. We have
+                    designed a database schema to store email subscriptions, products
+                    (name, description, pictures, price) and customers (address, name,
+                    ordered products). To our knowledge, this schema is normalised up to
+                    BCNF.
+                </p>
+            <li><b>A for Dynamic pages</b></li>
+                <p>We have not created dynamic pages.</p>
+            <li>X for Depth (out of 20)</li>
+        </ul>
+    </body>
+</html>

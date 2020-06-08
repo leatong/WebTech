@@ -1,0 +1,108 @@
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: calc(10px + 2vmin);
+}
+
+.embed {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.youtube {
+  padding-bottom: 15px;
+}
+
+@media screen and (max-width: 600px) {
+  .youtube {
+    width: 100%;
+  }
+}
+
+.img {
+  position: absolute;
+  left: 50%; top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 20vmin; height: 20vmin;
+  margin: auto;
+  border: solid 2px #ffffff;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.album {
+  width: 15vmin; height: 15vmin;
+  position: absolute;
+  left: 38%; top: 5%;
+  transform: translate(-38%, -5%);
+  transform: rotate(0deg);
+}
+
+.lemon {
+  width: 18vmin; height: 15vmin;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid 2px #ffffff;
+  transform-origin: center;
+  top: 60%; left: 63%;
+  transform: translate(-60%, -63%);
+  transform: rotate(125deg);
+}
+
+.honey {
+  width: 18vmin; height: 15vmin;
+  position: absolute;
+  object-fit: cover;
+  border-radius: 50%;
+  border: solid 2px #ffffff;
+  top: 60%; left: 10%;
+  transform: translate(-60%, -10%);
+  transform: rotate(-125deg);
+}
+
+.vinyl {
+  position: relative;
+  width: 65vmin; height: 65vmin;
+  border-radius: 50%;
+  border: solid 4px #000000;
+  background: 
+    linear-gradient(30deg, transparent 40%, rgba(42, 41, 40, .85) 40%) no-repeat 100% 0,
+    linear-gradient(60deg, rgba(42, 41, 40, .85) 60%, transparent 40%) no-repeat 0 100%,
+    repeating-radial-gradient(#2a2928, #2a2928 4px, #ada9a0 5px, #2a2928 6px);
+  background-size: 50% 100%, 100% 50%, 100% 100%;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .vinyl {
+    animation: spin infinite 40s linear;
+  }
+  .lemon:hover, .album:hover, .honey:hover {
+    animation: song-spin infinite 20s linear;
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes song-spin {
+  0% {
+    transform: rotate(0deg) scale(1.15);
+    filter: contrast(140%);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

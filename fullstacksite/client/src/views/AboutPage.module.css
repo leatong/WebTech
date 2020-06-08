@@ -1,0 +1,69 @@
+.tile {
+    max-height: 90vh;
+    display: inline-flex;
+    flex-direction: row;
+    position: relative;
+    margin: 5vh;
+    padding: 5vh;
+}
+
+.image {
+    width: 50%;
+}
+
+.subtitle {
+    font-family: "Californian FB", monospace;
+    font-size: 4vh;
+    font-weight: bold;
+}
+
+.content {
+    font-family: "Californian FB", serif;
+    font-size: 3vh;
+}
+
+.text {
+    width: 50%;
+}
+
+.text .left {
+    padding: 0 7vh 0 4vh;
+}
+
+.text .right {
+    padding: 0 4vh 0 7vh;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1500px) {
+    .tile {
+        flex-direction: column;
+        max-height: 145vh;
+        margin: 3vh;
+        padding: 3vh;
+    }
+
+    .image {
+        width: 100%;
+        order: 0;
+    }
+
+    .text {
+        width: 100%;
+        order: 1;
+        padding-top: 7vh;
+        padding-bottom: 7vh;
+    }
+
+    .text .left {
+        padding: 0 0 0 0;
+    }
+    
+    .text .right {
+        padding: 0 0 0 0;
+    }
+}

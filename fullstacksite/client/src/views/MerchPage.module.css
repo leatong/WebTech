@@ -1,0 +1,45 @@
+.overview {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    margin: 50px;
+    padding: 0 30px 30px 30px;
+    justify-content: center;
+}
+
+.tile {
+    width: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 50px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: left;
+}
+
+.pic {
+    object-fit: contain;
+    height: 200px;
+    width: 100%;
+}
+
+.tag {
+    height: auto;
+}
+
+.tag .name {
+    font-weight: bold;
+    font-size: 18px;
+    height: 30px;
+    padding-top: 10px;
+}
+
+.tag .price {
+    font-size: 18px;
+    padding-top: 14px;
+    height: 6px;
+}
+
+.button {
+    margin-bottom: 30px;
+}

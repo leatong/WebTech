@@ -1,0 +1,149 @@
+.overview {
+    height: 60vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.overview .productList {
+    width: 65vw;
+    min-width: 470px;
+    display: grid;
+    grid-template-columns: minmax(290px, 100%);
+    grid-template-rows: 250px;
+    padding-left: 20%;
+    padding-right: 3vw;
+    overflow: scroll;
+}
+
+.productList::-webkit-scrollbar {
+    -webkit-appearance: none;
+    width: 7px;
+    height: 0;
+}
+
+.productList::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0, 0, 0, .5);
+    box-shadow: 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.product {
+    background-color: rgba(252,255,196,0.4);
+    width: 100%;
+    height: 225px;
+    margin-bottom: 3vh;
+    display: flex;
+    flex-direction: row;
+}
+
+.product .left {
+    width: 50%;
+    height: 100%;
+    margin-right: 2vw;
+}
+
+.picContainer {
+    padding-top: 2vh;
+    height: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.pic {
+    object-fit: contain;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.product .text {
+    padding-top: 2vh;
+    padding-right: 1vw;
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    font-family: "Arial Narrow", serif;
+    font-size: 18px;
+}
+
+.labels {
+    display: flex;
+    flex-direction: row;
+}
+
+.link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    color: tomato;
+    padding-top: 1vh;
+}
+
+.update {
+    width: 85px;
+    min-width: 80px;
+    height: 30px;
+    font-size: 16px;
+    border-color: tomato;
+}
+
+.remove {
+    width: 85px;
+    font-size: 16px;
+    border: 0;
+    background-color: transparent;
+    color: tomato;
+    text-decoration: underline;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.remove:hover {
+    cursor: pointer;
+}
+
+.right {
+    width: 35vw;
+}
+
+.formList {
+    min-width: 300px;
+    margin-right: 20%;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    padding-left: 20%;
+    padding-right: 20%;
+}
+
+.fieldPair {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.doubleLeft {
+    width: 50%;
+    padding-right: 3px;
+}
+
+.doubleRight {
+    width: 50%;
+    padding-left: 3px;
+}
+
+.fieldName {
+    font-family: "Arial Narrow", serif;
+    font-size: 16px;
+}
+
+.fieldForm {
+    width: 100%;
+    height: 30px;
+    min-width: 96px;
+}

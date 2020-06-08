@@ -1,0 +1,156 @@
+.overview {
+    height: 60%;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+    justify-content: center;
+    margin-top: 8vh;
+}
+
+.image {
+    width: 50vw;
+    min-width: 475px;
+    height: 100%;
+    padding-left: 20%;
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+}
+
+.left {
+    width: 8vw;
+    display: flex;
+    flex-direction: column;
+}
+
+.smallpic {
+    width: 100%;
+    height: auto;
+}
+
+.smallpic:hover {
+    cursor: pointer;
+}
+
+.largepic {
+    object-fit: contain;
+    width: 100%;
+}
+
+.right {
+    width: 35vw;
+    height: 100%;
+    margin-left: 20px;
+}
+
+.text {
+    width: 50vw;
+    min-width: 475px;
+    display: flex;
+    flex-direction: column;
+    padding-left: 3vw;
+    padding-right: 20%;
+}
+
+.text .name {
+    width: 100%;
+    height: auto;
+    font-weight: bold;
+    font-family: "Arial Narrow", serif ;
+    font-size: 26px;
+    margin-bottom: 2vh;
+}
+
+.text .description {
+    width: 100%;
+    height: auto;
+    font-family: "Arial Narrow", serif ;
+    font-size: 18px;
+    margin-bottom: 2vh;
+}
+
+.text .price {
+    height: 5vh;
+    font-weight: bold;
+    font-family: "Arial Narrow", serif ;
+    font-size: 24px;
+}
+
+.text .sizebox {
+    width: 100%;
+    height: 50px;
+    margin: 1vh 0 1vh 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.text .sizebuttonInactive {
+    height: 40px;
+    min-width: 40px;
+    margin-right: 5px;
+    font-size: 16px;
+    background: white;
+    color: black;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.text .sizebuttonInactive:hover {
+    cursor: pointer;
+    background: #FF7A51;
+    color: black;
+}
+
+.text .sizebuttonActive {
+    height: 40px;
+    min-width: 40px;
+    margin-right: 5px;
+    font-size: 20px;
+    background: #FF7A51;
+    color: white;
+}
+
+.text .sizebuttonActive:hover {
+    cursor: pointer;
+    background: #FF7A51;
+    color: white;
+}
+
+.amountbox {
+    height: 6vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    padding-top: 20px;
+}
+
+.amount {
+    width: 60px;
+    height: 100%;
+    margin: 0 5px 0 5px;
+}
+
+.incrementButton {
+    width: 35px;
+    height: 100%;
+}
+
+.incrementButton:hover {
+    cursor: pointer;
+}
+
+.text .cartButton {
+    width: 140px;
+    height: 100%;
+    margin-top: 2vh;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number] {
+    -moz-appearance:textfield; /* Firefox */
+}

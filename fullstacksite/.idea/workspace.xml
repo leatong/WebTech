@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a1477788-30a3-4524-b320-72d229bbda56" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1atCyYCRWDyI6euW5jiYra2baQK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/client/src/assets" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\WebTech\fullstacksite\client\src\Component" />
+      <recent name="C:\Users\DELL\WebTech\fullstacksite\db" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\WebTech\fullstacksite\client\src\assets" />
+      <recent name="C:\Users\DELL\WebTech\fullstacksite\client\src" />
+      <recent name="C:\Users\DELL\WebTech\fullstacksite\client\public" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="npm start" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/client/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a1477788-30a3-4524-b320-72d229bbda56" name="Default Changelist" comment="" />
+      <created>1587545757696</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587545757696</updated>
+      <workItem from="1587545759124" duration="7683000" />
+      <workItem from="1587558837071" duration="107000" />
+      <workItem from="1590747840551" duration="2523000" />
+      <workItem from="1590946206237" duration="441000" />
+      <workItem from="1591005026551" duration="2435000" />
+      <workItem from="1591088869515" duration="15878000" />
+      <workItem from="1591177241380" duration="7586000" />
+      <workItem from="1591299032677" duration="7053000" />
+      <workItem from="1591351823341" duration="36963000" />
+      <workItem from="1591428884837" duration="40436000" />
+      <workItem from="1591523051469" duration="32886000" />
+      <workItem from="1591607017879" duration="17946000" />
+      <workItem from="1591630800185" duration="684000" />
+      <workItem from="1591647092697" duration="1455000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1590946306403">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="223" y="68" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1536.824@0.0.1536.824" timestamp="1590946306403" />
+    <state x="1223" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1591400161241">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1223" y="270" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591400161241" />
+    <state x="549" y="168" key="FileChooserDialogImpl" timestamp="1587558939852">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="168" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1587558939852" />
+    <state x="270" y="57" key="SettingsEditor" timestamp="1591098205475">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="270" y="57" key="SettingsEditor/0.0.1536.824@0.0.1536.824" timestamp="1591098205475" />
+    <state x="449" y="237" key="com.intellij.ide.util.TipDialog" timestamp="1587558836306">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="449" y="237" key="com.intellij.ide.util.TipDialog/0.0.1536.824@0.0.1536.824" timestamp="1587558836306" />
+    <state x="1117" y="230" width="672" height="678" key="search.everywhere.popup" timestamp="1591447842234">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1117" y="230" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1591447842234" />
+  </component>
+</project>
