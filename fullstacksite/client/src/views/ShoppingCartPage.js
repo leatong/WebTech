@@ -5,6 +5,7 @@ import Link from "@material-ui/core/Link";
 import CartProduct from "../Component/CartProduct";
 import cart from "../views/ShoppingCart.module.css";
 import CheckoutForm from "../Component/CheckoutForm";
+import headBar from "./OverHeadBar.module.css";
 
 class ShoppingCartPage extends Component {
     state = {
@@ -40,7 +41,7 @@ class ShoppingCartPage extends Component {
                     <IconBar />
                 </div>);}
         return (
-            <div>
+            <div className={headBar.overview}>
                 <OverHeadBar currentPage='cart'/>
                 <div className={cart.overview}>
                     <div className={cart.productList}>

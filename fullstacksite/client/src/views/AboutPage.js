@@ -7,10 +7,11 @@ import oscar from "../assets/Oscar.png";
 import hal from "../assets/Hal.png";
 import jordan from "../assets/Jordan.png";
 import Button from "@material-ui/core/Button";
+import headBar from "../views/OverHeadBar.module.css";
 
 function AboutPage() {
     return (
-        <div>
+        <div className={headBar.overview}>
             <OverHeadBar currentPage='about'/>
             <div className={about.tile}>
                 <img className={about.image} src={bandPic} alt="band picture"/>
@@ -87,7 +88,7 @@ function AboutPage() {
                 <img className={about.image} src={oscar} alt="oscar picture"/>
             </div>
             <div className={about.footer}>
-                <Button onClick={() => topFunction()} style={{"font-weight": "bold"}}>Back to top</Button>
+                <Button onClick={() => topFunction()} style={{"fontWeight": "bold"}}>Back to top</Button>
             </div>
             <IconBar />
         </div>

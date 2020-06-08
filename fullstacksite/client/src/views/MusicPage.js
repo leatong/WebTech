@@ -7,10 +7,11 @@ import honey from '../assets/honey.png';
 import music from './MusicPage.module.css';
 import IconBar from './IconBar';
 import OverHeadBar from "./OverHeadBar";
+import headBar from "./OverHeadBar.module.css";
 
 function MusicPage() {
     return (
-        <div>
+        <div className={headBar.overview}>
             <OverHeadBar currentPage='music'/>
             <div className={music.center}>
                 <div className={music.vinyl}>

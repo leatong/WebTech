@@ -3,6 +3,7 @@ import OverHeadBar from "./OverHeadBar";
 import detailPage from "./DetailPage.module.css";
 import Button from "@material-ui/core/Button";
 import {UpdateCart} from "../Component/UpdateCart";
+import headBar from "../views/OverHeadBar.module.css";
 
 class DetailPage extends Component{
     state = {
@@ -41,8 +42,8 @@ class DetailPage extends Component{
         const {name, description, price} = this.state.details[0];
 
         return (
-            <div>
-                <OverHeadBar currentPage='SHOP'/>
+            <div className={headBar.overview}>
+                <OverHeadBar currentPage='shop'/>
                 <div className={detailPage.overview}>
                     <div className={detailPage.image}>
                         <div className={detailPage.left}>
