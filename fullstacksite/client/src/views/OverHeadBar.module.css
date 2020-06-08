@@ -31,9 +31,15 @@
     pointer-events: none;
 }
 
-@media only screen and (min-width: 768px) {
+@media only screen and (max-width: 768px) {
+    .overview {
+        min-width: 0;
+    }
     .logo {
-        height: 23vmin;
+        height: 30vmin;
         width: auto;
+    }
+    .buttons {
+        max-width: min-content;
     }
 }

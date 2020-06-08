@@ -4,5 +4,12 @@
    align-items: center;
    justify-content: center;
    overflow: hidden;
-   font-size: calc(10px + 2vmin);
+   font-size: calc(10px + 1vmin);
+   font-weight: bold;
+   padding-top: 20px;
+   padding-bottom: 10px;
+}
+
+.heading {
+   font-size: calc(18px + 1vmin);
 }

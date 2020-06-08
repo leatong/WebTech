@@ -30,6 +30,7 @@ function OverHeadBar(props) {
                     <ClickHeadBar path='cart' name='cart' endIcon={<ShoppingCartOutlinedIcon />} currentPage={props.currentPage} />
                 </div> 
             </div>
+            <hr style={{backgroundColor: '#FF7A51', border:'transparent', height:'4px', margin:'-3px'}}/>
         </div>
     )
 }

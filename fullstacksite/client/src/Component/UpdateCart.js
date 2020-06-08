@@ -1,5 +1,3 @@
-import React from "react";
-
 export function UpdateCart(productInfo, paramId) {
     /*
        if storage already exists

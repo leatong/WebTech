@@ -1,5 +1,4 @@
 import React from 'react';
-import logo from '../assets/tangerinerye_logo.png';
 import bandpic from '../assets/bandpic.jpg'
 import album from '../assets/album1.png';
 import lemon from '../assets/lalalemon.png';
@@ -26,10 +25,10 @@ function MusicPage() {
                 </div>
             </div>
             <div className={music.embed}>
-                <iframe width="560" height="315" src="https://www.youtube.com/embed/haBxkGrYPUI" frameborder="0" 
+                <iframe title="Honey Youtube" width="560" height="315" src="https://www.youtube.com/embed/haBxkGrYPUI" frameborder="0" 
                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
                     className={music.youtube}></iframe>
-                <iframe src="https://open.spotify.com/embed/artist/6N7HQGSTngvAUUqDquoXfI" 
+                <iframe title="Tangerine Rye Spotify" src="https://open.spotify.com/embed/artist/6N7HQGSTngvAUUqDquoXfI" 
                     width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                    
             </div>
             <IconBar />

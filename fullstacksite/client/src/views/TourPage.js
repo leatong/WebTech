@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import OverHeadBar from "./OverHeadBar";
 import IconBar from './IconBar';
 import tour from './TourPage.module.css';
+import Place from '../Component/Place';
 
 class TourPage extends Component {
     state = {
@@ -21,7 +22,8 @@ class TourPage extends Component {
                 <div>
                     <OverHeadBar currentPage='tour'/>
                         <div className={tour.center}>
-                            loading...
+                        <p className={tour.heading}>2020 WORLD TOUR</p>
+                            <p>loading...</p>
                         </div>
                     <IconBar />
                 </div>
@@ -31,7 +33,8 @@ class TourPage extends Component {
                 <div>
                     <OverHeadBar currentPage='tour'/>
                         <div className={tour.center}>
-                            Sorry, no tours happening currently!
+                        <p className={tour.heading}>2020 WORLD TOUR</p>
+                            <p>Sorry, no tours happening currently!</p>
                         </div>
                     <IconBar />
                 </div>
@@ -41,7 +44,9 @@ class TourPage extends Component {
             <div>
                 <OverHeadBar currentPage='tour'/>
                     <div className={tour.center}>
-                        
+                    <p className={tour.heading}>2020 WORLD TOUR</p>
+                    {this.state.tourDates.map((tour) => {
+                        return <Place tour={tour}/>})}
                     </div>
                 <IconBar />
             </div>
