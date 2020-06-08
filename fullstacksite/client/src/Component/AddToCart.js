@@ -1,6 +1,6 @@
 import React from "react";
 
-export function UpdateCart(productInfo, paramId) {
+export function AddToCart(productInfo, paramId) {
     /*
        if storage already exists
             load existing cart
@@ -20,6 +20,7 @@ export function UpdateCart(productInfo, paramId) {
             if (arr[i].id === paramId && arr[i].size === size) {
                 console.log(arr[i].count, count);
                 arr[i].count += count;
+                arr[i].cost += count * arr[i].price;
                 exists = true;
                 i=arr.length; // break out of the loop
             }

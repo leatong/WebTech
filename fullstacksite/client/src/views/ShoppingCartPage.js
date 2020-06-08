@@ -12,6 +12,7 @@ class ShoppingCartPage extends Component {
         super(props);
         this.state = {
             loading: true,
+            totalCost: 0,
             productList: null
         }
         this.checkoutCart = this.checkoutCart.bind(this);
@@ -23,7 +24,9 @@ class ShoppingCartPage extends Component {
         if (arr) {
             this.setState({productList: arr});
         }
-        console.log(this.state.productList);
+        var money = this.totalCost();
+        this.setState({totalCost: money});
+        console.log(this.state);
         this.setState({loading: false});
     }
 
@@ -32,11 +35,13 @@ class ShoppingCartPage extends Component {
         arr.splice(index,1);
         localStorage.setItem('myCart', JSON.stringify(arr));
         this.setState({productList: arr});
+        var money = this.totalCost();
+        this.setState({totalCost: money});
     }
 
     emptyCart = () => {
         localStorage.clear();
-        this.setState({productList: null});
+        this.setState({productList: null, totalCost: 0});
     }
 
     checkoutCart = (childState) => {
@@ -89,7 +94,8 @@ class ShoppingCartPage extends Component {
                     <div className={cart.productList}>
                         {this.state.productList.map((product, index) => {
                             return (
-                                <CartProduct product={product} index={index} key={index} onRemove={this.removeItem}/>
+                                <CartProduct product={product} index={index} key={index} onRemove={this.removeItem}
+                                updateCart={()=>this.componentDidMount()} zeroCount={()=>this.removeItem(index)}/>
                             )})
                         }
                     </div>

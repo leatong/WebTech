@@ -8,10 +8,6 @@ class CartProduct extends Component {
         count: this.props.product.count
     }
 
-    clearCart = () => {
-        localStorage.clear();
-    }
-
     decrement = () => {
         this.setState({
             count: this.state.count<=0? 0 : this.state.count-1
@@ -24,12 +20,16 @@ class CartProduct extends Component {
         })
     }
 
-
-
     updateCart = () => {
-        let arr = JSON.parse(localStorage.getItem('myCart'));
-        arr[this.props.index].count = this.state.count;
-        localStorage.setItem('myCart', JSON.stringify(arr));
+        if (this.state.count===0) {
+            this.props.zeroCount();
+        } else {
+            let arr = JSON.parse(localStorage.getItem('myCart'));
+            arr[this.props.index].count = this.state.count;
+            arr[this.props.index].cost = this.state.count * arr[this.props.index].price;
+            localStorage.setItem('myCart', JSON.stringify(arr));
+            this.props.updateCart();
+        }
     }
 
     render() {
