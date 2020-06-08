@@ -22,14 +22,14 @@ module.exports.dbSchema = `
         date TEXT NOT NULL
     );
     CREATE TABLE IF NOT EXISTS Customers (
-        cust_id INTEGER PRIMARY KEY NOT NULL,
+        id INTEGER PRIMARY KEY NOT NULL,
         cust_firstname TEXT NOT NULL,
         cust_lastname TEXT NOT NULL,
         cust_email TEXT NOT NULL,
         cust_phone INTEGER NULL
     );
     CREATE TABLE IF NOT EXISTS Addresses (
-        addr_id INTEGER PRIMARY KEY NOT NULL,
+        id INTEGER PRIMARY KEY NOT NULL,
         addr_line_1 TEXT NOT NULL,
         addr_line_2 TEXT,
         addr_line_3 TEXT,

@@ -4,6 +4,27 @@ var sqlite = require('sqlite');
 path = require('path');
 var db;
 
+router.get('/', function(req, res){
+    getOrders()
+    .then(function(subs){
+        res.json(subs);
+    })
+    .catch(function(err){
+        res.send(err);
+    })
+    async function getOrders() {
+        try {
+            db = await sqlite.open(path.join(__dirname, "../db/data.db"));
+            var orders = await db.all(
+                "SELECT CO.*, P.product_id, P.quantity FROM Cust_Orders AS CO " +
+                "INNER JOIN Order_Items AS P ON CO.order_id = P.order_id"
+            );
+            await db.close();
+            return orders;
+        } catch(err) { console.log(err); }
+    }
+});
+
 router.get('/customer', function(req, res){
    getCustomers()
    .then(function(subs){
@@ -61,7 +82,7 @@ router.post('/createNewOrder', function(req, res){
             console.log("Customer ID: " + custId);
             if(obj.phone != null) {
                await db.run("UPDATE Customers SET cust_phone = ? " +
-                  "WHERE Customers.cust_id = ?", obj.phone, custId);
+                  "WHERE Customers.id = ?", obj.phone, custId);
             }
 
             var addr = await db.run(
@@ -72,17 +93,26 @@ router.post('/createNewOrder', function(req, res){
             console.log("Address ID: " + addrId);
             if(obj.address2 != null) {
                await db.run("UPDATE Addresses SET addr_line_2 = ? " +
-                  "WHERE Addressess.id = ?", obj.address2, addrId);
+                  "WHERE Addresses.id = ?", obj.address2, addrId);
             }
             if(obj.address3 != null) {
                await db.run("UPDATE Addresses SET addr_line_3 = ? " +
-                  "WHERE Addressess.id = ?", obj.address3, addrId);
+                  "WHERE Addresses.id = ?", obj.address3, addrId);
             }
             await db.run(
                "INSERT INTO Cust_Addr (cust_id, addr_id) VALUES (?, ?)", custId, addrId
             );
-
-            
+            var order = await db.run(
+                "INSERT INTO Cust_Orders (cust_id, date) VALUES (?, datetime('now', 'localtime'))", custId
+            );
+            var orderId = order.lastID;
+            let products = obj.products;
+            for (let i=0; i<products.length; i++) {
+                await db.run(
+                    "INSERT INTO Order_Items (order_id, product_id, quantity) " +
+                    "VALUES (?, ?, ?)", orderId, products[i].id, products[i].count
+                );
+            }
             await db.close();
        } catch(err) { console.log(err); }
    }

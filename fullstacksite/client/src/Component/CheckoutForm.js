@@ -48,11 +48,11 @@ class CheckoutForm extends Component {
         this.setState(prevState => ({
             ...prevState,
             formOptional: {
-                ...prevState.formCompulsory,
+                ...prevState.formOptional,
                 [name]: value,
             }
         }))
-        //console.log(this.state);
+        // console.log(this.state);
     };
 
     checkout = (e) => {

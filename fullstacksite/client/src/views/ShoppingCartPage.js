@@ -63,8 +63,7 @@ class ShoppingCartPage extends Component {
                 address2: childState.formOptional.address2,
                 address3: childState.formOptional.address3,
                 phone: childState.formOptional.phone,
-                products: this.state.productList,
-                totalcost: this.state.totalCost
+                products: this.state.productList
             })
         }).then((res) => {
             console.log(res)
