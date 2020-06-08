@@ -4,6 +4,7 @@ import detailPage from "./DetailPage.module.css";
 import Button from "@material-ui/core/Button";
 import {AddToCart} from "../Component/AddToCart";
 import headBar from "../views/OverHeadBar.module.css";
+import IconBar from "./IconBar";
 
 class DetailPage extends Component{
     state = {
@@ -97,6 +98,7 @@ class DetailPage extends Component{
                         </div>
                     </div>
                 </div>
+                <IconBar />
             </div>
         );
     }

@@ -154,3 +154,50 @@ input[type=number]::-webkit-outer-spin-button {
 input[type=number] {
     -moz-appearance:textfield; /* Firefox */
 }
+
+@media screen and (max-width: 1000px) {
+    .overview {
+        flex-direction: column;
+        height: auto;
+        width: auto;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .image {
+        padding-left: 0;
+        padding-bottom: 15px;
+        min-width: 350px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .text {
+        min-width: 340px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .text .sizebox {
+        margin: 0 0 0 0;
+        padding-top: 15px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .amountbox {
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        text-align: center;
+        height: auto;
+    }
+    .text .cartButton {
+        display: block;
+        margin: auto;
+        padding-top: 20px;
+    }
+    
+}

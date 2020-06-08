@@ -37,6 +37,7 @@
     }
     .logo {
         width: 80%;
+        height: auto;
     }
     .buttons {
         max-width: min-content;
