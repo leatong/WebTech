@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import OverHeadBar from "./OverHeadBar";
 import detailPage from "./DetailPage.module.css";
 import Button from "@material-ui/core/Button";
-import {UpdateCart} from "../Component/UpdateCart";
+import {AddToCart} from "../Component/AddToCart";
 import headBar from "../views/OverHeadBar.module.css";
 
 class DetailPage extends Component{
@@ -34,7 +34,7 @@ class DetailPage extends Component{
         })
     }
 
-    addToCart = () => {return UpdateCart(this.state, this.props.match.params.id)}
+    addToCart = () => {return AddToCart(this.state, this.props.match.params.id)}
 
     render() {
         if (this.state.loading) return <div>loading...</div>
