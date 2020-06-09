@@ -15,6 +15,7 @@ class ShoppingCartPage extends Component {
             productList: null
         }
         this.checkoutCart = this.checkoutCart.bind(this);
+        this.removeItem = this.removeItem.bind(this);
     }
 
     async componentDidMount() {
@@ -44,9 +45,6 @@ class ShoppingCartPage extends Component {
     }
 
     checkoutCart = (childState) => {
-        // console.log(childState);
-        var list = this.state.productList;
-        // console.log(list);
         fetch(('/api/orders/createNewOrder'), {
             method: 'POST',
             headers: {
@@ -100,8 +98,12 @@ class ShoppingCartPage extends Component {
                     <div className={cart.productList}>
                         {this.state.productList.map((product, index) => {
                             return (
-                                <CartProduct product={product} index={index} key={index} onRemove={this.removeItem}
-                                updateCart={()=>this.componentDidMount()} zeroCount={()=>this.removeItem(index)}/>
+                                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                                // key has to be unique not just within the same rendering loop
+                                // Otherwise when deleting previous child, the child behind will take over it's old state
+                                <CartProduct product={product} index={index} key={`${product.id}-${product.size}`}
+                                             onRemove={this.removeItem} updateCart={()=>this.componentDidMount()}
+                                             zeroCount={()=>this.removeItem(index)}/>
                             )})
                         }
                     </div>
@@ -109,7 +111,6 @@ class ShoppingCartPage extends Component {
                         <CheckoutForm onClear={this.emptyCart} onCheckout={this.checkoutCart} money={this.totalCost()}/>
                     </div>
                 </div>
-
                 <IconBar />
             </div>
         );

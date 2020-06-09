@@ -35,14 +35,14 @@
     <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\IntelliJ IDEA 2019.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\DELL\WebTech\fullstacksite\client\src\Component" />
-      <recent name="C:\Users\DELL\WebTech\fullstacksite\db" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\DELL\WebTech\fullstacksite\client\src\assets" />
       <recent name="C:\Users\DELL\WebTech\fullstacksite\client\src" />
       <recent name="C:\Users\DELL\WebTech\fullstacksite\client\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\DELL\WebTech\fullstacksite\client\src\Component" />
+      <recent name="C:\Users\DELL\WebTech\fullstacksite\db" />
     </key>
   </component>
   <component name="RunManager">
@@ -80,6 +80,7 @@
       <workItem from="1591647092697" duration="2555000" />
       <workItem from="1591699481120" duration="871000" />
       <workItem from="1591701425480" duration="4547000" />
+      <workItem from="1591708049141" duration="8184000" />
     </task>
     <servers />
   </component>
