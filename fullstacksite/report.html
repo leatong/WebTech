@@ -36,7 +36,7 @@
             <ul>
                 <li>
                 Font-awesome and material-ui icons behaved
-                differently for style tags, solution was to
+                differently for style tags, so our solution was to
                 make different functions that styled font-awesome
                 icons with a div tag. This includes using "withStyles"
                 method (see client/src/views/ButtonStyle.js) to modify their styles.
@@ -269,7 +269,7 @@
                     Hence, only static assets are served and any dynamic pages are only shown 
                     as loading... 
                     We have also self-issued our own self-signed SSL certificate
-                    and keys, but did not get an authorised certificate. The initial plan was 
+                    and keys using openssl, but did not get an authorised certificate. The initial plan was 
                     to deploy to a cloud server to get a domain and request one from 
                     <a href="https://letsencrypt.org">letsencrypt.org</a>, however,
                     because the app is unfinished (we have not dealt with transactions, and

@@ -24,7 +24,7 @@ var credentials = {
 };
 
 http.createServer(app).listen(port, function (){
-    console.log("Server listening on port %d in $s mode", this.address().port, app.settings.env);
+    console.log("Server listening on port %d in %s mode", this.address().port, app.settings.env);
 });
 
 // Run https server if on localhost
