@@ -6,7 +6,7 @@ import bandPic from "../assets/bandpic.jpg";
 import oscar from "../assets/Oscar.png";
 import hal from "../assets/Hal.png";
 import jordan from "../assets/Jordan.png";
-import Button from "@material-ui/core/Button";
+import { BackToTopButton } from "./ButtonStyle";
 import headBar from "../views/OverHeadBar.module.css";
 
 function AboutPage() {
@@ -88,7 +88,7 @@ function AboutPage() {
                 <img className={about.image} src={oscar} alt="Oscar Drummer"/>
             </div>
             <div className={about.footer}>
-                <Button onClick={() => topFunction()} style={{"fontWeight": "bold"}}>Back to top</Button>
+                <BackToTopButton onClick={() => topFunction()}>Back to top</BackToTopButton>
             </div>
             <IconBar />
         </div>

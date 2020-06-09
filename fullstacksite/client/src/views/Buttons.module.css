@@ -1,0 +1,9 @@
+.detailButton {
+    width: 200px;
+    margin: 2px;
+    padding: 0
+}
+
+a:hover {
+    text-decoration: none;
+}
