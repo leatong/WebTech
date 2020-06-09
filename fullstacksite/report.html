@@ -227,25 +227,48 @@
                     We have handled port numbers in both developement and production.
                     The server has a REST API with an /api route to handle get/post requests.
                     From the /api route, we created /orders, /products, /subs, /tour routes.
-                    We also handled URL parameter validation in /api/products/:productId
-                    by checking that productId is always an integer via regex.
+                    To prevent SQL injections, all INSERT, UPDATE, and SELECT WHERE statements were 
+                    prepared statements (by using ? to insert the value/parameter). Each route 
+                    was created to handle different get/post requests. For example, api/subs 
+                    handles post requests from the client-side to insert a new subscriber email. 
+                    The route also displays all the current data in subscribers. Different 
+                    routes were also created for api/orders to handle post requests from 
+                    a successful transaction. The route api/orders/createNewOrder takes all 
+                    the json data from the req.body and inserts it into the relevant tables. 
+                    As there are optional values in customers and addresses, the values are 
+                    only inserted if the json object for it is not null through UPDATE. 
+                    In the route api/products, there is another route to get each individual 
+                    product data and pictures. This is shown as api/products/:productId.
+                    We handled URL parameter validation in /api/products/:productId
+                    by checking that productId is always an integer via regex. The reason 
+                    why we made different routes for data of all products and individual 
+                    product is because the merch page first needs to get all the products, 
+                    but only needs one picture associated with it. If we just did a SELECT *
+                    query and a INNER JOIN, the json data sent would have multiple identical 
+                    product ids with different pictures (if the product has more than one 
+                    picture, like a front and back view). Hence, the api/products was limited 
+                    to the first picture only, and more pictures can be fetched from its /:productId. 
+                    This was used in the detailPage to display the merchandise details. 
                     The server also handles 404 and 500 errors, and redirects to https.
                 </p>
                 <P>As we wanted to try deploying the web application online, we chose
                     Heroku as our cloud hosting platform due to its ease. This can be found
                     on <b><a href='https://tangerinerye.herokuapp.com/'>this link</a></b>. 
                     However, we found out that it does not support sqlite3 as a database, and
-                    will require the database to be rebuilt in postgresql. Hence, only static
-                    assets are served and any dynamic pages are only shown as loading... 
-                    We also have self-issued our own self-signed SSL certificate
+                    will require the database to be rebuilt, for instance, in postgresql. 
+                    Hence, only static assets are served and any dynamic pages are only shown 
+                    as loading... 
+                    We have also self-issued our own self-signed SSL certificate
                     and keys, but did not get an authorised certificate. The initial plan was 
-                    to deploy to a cloud server to get a domain and get request one, however,
+                    to deploy to a cloud server to get a domain and request one from 
+                    <a href="https://letsencrypt.org">letsencrypt.org</a>, however,
                     because the app is unfinished (we have not dealt with transactions, and
                     the deployed application is only static), we did not have time to get one. 
                 </P>
             <li><b>A for Database</b></li>
                 <p>The database schema is in the folder /db/dbSchema.js which is used in 
-                    /db/createdb.js to create the database, data.db.
+                    /db/createdb.js to create the database, data.db. The database is then 
+                    accessed via a REST API.
                     <span class="img-center">
                     <img 
                         src="schema.png"
