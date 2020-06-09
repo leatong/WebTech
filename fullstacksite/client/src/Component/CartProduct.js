@@ -23,6 +23,7 @@ class CartProduct extends Component {
     updateCart = () => {
         if (this.state.count===0) {
             this.props.zeroCount();
+            this.setState({count: this.props.product.count}); // Set the state.count to reflex the next product
         } else {
             let arr = JSON.parse(localStorage.getItem('myCart'));
             arr[this.props.index].count = this.state.count;
