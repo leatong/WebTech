@@ -4,19 +4,11 @@ import logo from '../assets/tangerinerye_logo.png';
 import {ClickHeadBar} from "../Component/ClickButton";
 import ShoppingCartOutlinedIcon from "@material-ui/icons/ShoppingCartOutlined";
 
-// function ShoppingCartIcon() {
-//     return (
-//         <div>
-//             <ClickHeadBar path='cart' name={<ShoppingCartOutlinedIcon />} currentPage='cart'/>
-//         </div>
-//     )
-// }
-
 function OverHeadBar(props) {
     return (
         <div className={headBar.center}>
             <img className={headBar.logo} src={logo} alt="Tangerine Rye logo" />
-            <hr style={{backgroundColor: '#FF7A51', border:'transparent', height:'4px', margin:'-3px'}}/>
+            <hr />
             <div className={headBar.bar}>
                 <div className={headBar.side}></div>
                 <div className={headBar.buttons}>
@@ -30,7 +22,7 @@ function OverHeadBar(props) {
                     <ClickHeadBar path='cart' name='cart' endIcon={<ShoppingCartOutlinedIcon />} currentPage={props.currentPage} />
                 </div> 
             </div>
-            <hr style={{backgroundColor: '#FF7A51', border:'transparent', height:'4px', margin:'-3px'}}/>
+            <hr />
         </div>
     )
 }

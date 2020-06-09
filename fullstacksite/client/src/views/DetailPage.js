@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import {AddToCart} from "../Component/AddToCart";
 import headBar from "../views/OverHeadBar.module.css";
 import IconBar from "./IconBar";
+import { AddToCartButton } from "./ButtonStyle";
 
 class DetailPage extends Component{
     state = {
@@ -90,11 +91,9 @@ class DetailPage extends Component{
                             <button className={detailPage.incrementButton} id="increment" onClick={this.increment}>+</button>
                         </div>
                         <div className={detailPage.cartButton}>
-                            <Button variant='outlined' color="default"
-                                    style={{background: 'white', fontWeight: 'bold', width: '100%'}}
-                                    onClick={this.state.count>0? this.addToCart : null}>
+                            <AddToCartButton variant='outlined' onClick={this.state.count>0? this.addToCart : null}>
                                 Add to cart
-                            </Button>
+                            </AddToCartButton>
                         </div>
                     </div>
                 </div>

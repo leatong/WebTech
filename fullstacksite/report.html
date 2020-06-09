@@ -22,8 +22,10 @@
         <p>This website was made for a dear friend's band, Tangerine Rye.</p>
         <ul>
             <li><b>A for HTML</b></li>
-            <p>We generated HTML with React. We chose React as we
-               wanted to learn the industry standard.
+            <p>
+                We generated HTML with React framework. We chose React as we
+                wanted to learn the industry standard.
+                We used divisions very well, combining with css styling and React JSX ES6 style.
             </p>
             <li><b>A for CSS</b></li>
             <p>We generated CSS with React, and made
@@ -36,7 +38,8 @@
                 Font-awesome and material-ui icons behaved
                 differently for style tags, solution was to
                 make different functions that styled font-awesome
-                icons with a div tag.
+                icons with a div tag. This includes using "withStyles"
+                method (see client/src/views/ButtonStyle.js) to modify their styles.
                 </li>
             </ul>
             </p>
@@ -74,6 +77,13 @@
             <p>
                 client/src/Component/CartProduct.js
                 <img class="img-center" src="client/src/assets/childCallback.png" />
+            </p>
+            <p>
+                This is also used on updating the same page. In product's detail page, there are products that
+                have multiple pictures, they are rendered as small images on the left and user can click on them
+                to render them on the right with a bigger size. On cat Cap detail page, the bigger image on the right is rendered by clicking its small image
+                on the left, while the url stays unchanged:
+                <img class="img-center" src="client/src/assets/hat2Pic.png" />
             </p>
             <p>
                 One important thing we learnt from rendering child classes by mapping is that we need to provide
@@ -117,7 +127,7 @@
             </li>
             </ul>
             </p>
-            <li><b>A for PNG</b></li1>
+            <li><b>A for PNG</b></li>
                 <p>All images in the assets folder were taken from
                     the Tangerine Rye facebook page. Images had to be
                     manually edited using Photoshop to create transparent
@@ -310,7 +320,24 @@
                     product order. 
                 </p>
             <li><b>A for Dynamic pages</b></li>
-                <p>We have not created dynamic pages.</p>
+                <p>
+                    We have created dynamic pages for individual product detail page. It gets rendered by user
+                    clicking the "DETAILS" button in the shopping page and will take the id of the product
+                    and direct to /merch/:id.
+                </p>
+                <p>
+                    The dynamic page is not simply called by the shopping page (/merch). The product details
+                    are passed from MerchPage.js to its child component Product.js, which is rendered by mapping
+                    each entry of the JSON array as mentioned in JS section above. Then in Product.js the id of
+                    the product is passed to ClickDetail Button in ClickButton.js, which takes it as a path for the
+                    url. Then, because this url matches the pattern declared in AllPath.js (/merch/:id), the DetailPage.js gets
+                    rendered. In the meantime, that id is stored to in props.match.params as a property to the page.
+                </p>
+                <p>
+                    Then, in DetailPage.js, it fetches the id of the specific product to render from
+                    this.props.match.params.id. After this async function finished, the details of this product gets
+                    loaded.
+                </p>
             <li>X for Depth (out of 20)</li>
         </ul>
     </body>
