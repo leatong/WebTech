@@ -4,8 +4,13 @@
         <title>Web Tech Assignment Report</title>
         <style>
             .img-center {
+                padding-bottom: 10px;
+                padding-top: 10px;
                 text-align: center;
                 display: block;
+            }
+            p {
+                text-align: justify;
             }
         </style>
     </head>
@@ -123,7 +128,15 @@
                 <p>All images in the assets folder were taken from
                     the Tangerine Rye facebook page. Images had to be
                     manually edited using Photoshop to create transparent
-                    backgrounds.
+                    backgrounds. This was done by first cropping and magic wand 
+                    to select the white background and deleting it. However, the wand 
+                    could not select all of the white background, so manual selection 
+                    was done to get all the white background removed. Similar 
+                    manipulations were done on the blue album cover. The shadow 
+                    was removed completely to make the transparent cover cleaner. 
+                    The manipulations on the album cover was undoubtedly harder, 
+                    as the black tire and the dark blue background did not contrast 
+                    as much as the logo (orange and white).
                     <br>
                     <span class="img-center" style="background-color: aqua;">
                         <b>BEFORE</b>
@@ -136,6 +149,17 @@
                         alt="Tangerine Rye logo with transparent background"
                         height="150" />
                         <b>AFTER</b>
+                        <br>
+                        <b>BEFORE</b>
+                        <img
+                            src="client/src/assets/album1_before.jpg"
+                            alt="Tangerine Rye album before manipulation"
+                            height="200" />
+                        <img
+                            src="client/src/assets/album1.png"
+                            alt="Tangerine Rye album with transparent background"
+                            height="200" />
+                            <b>AFTER</b>
                     </span>
                     Album covers were also edited by cloning
                     the background pattern and stamping to remove the
@@ -163,6 +187,11 @@
                         height="200" />
                         <b>AFTER</b>
                     </span>
+                Additionally, to create our own merchandise from our homemade SVG logo, we 
+                used Photoshop to manipulate the logo onto t-shirt and cap mock-ups. To 
+                create the illusion of the logo being on the merchandise, the logo layer 
+                was set to multiply and opacity was slightly decreased to mimic the t-shirt 
+                creases and the cap texture. The t-shirt and cap mock-ups were found online.
                 </p>
             <li><b>A for SVG</b></li>
                 <p>All icons taken from font-awesome and material-ui
@@ -201,22 +230,68 @@
                     Photoshop was used to paste logo onto t-shirt and cap mockups (PNG).
                 </p>
             <li><b>A for Server</b></li>
-                <p>We have self-issued our own self-signed SSL certificate
-                    and keys, but as we have not gotten a domain name, we could
-                    not get a valid authorised certificate.
-                    We also have handled port numbers and integrating with client
-                    with an /api route to handle get/post requests.
+                <p>For our server, we chose to use Express to make routing easier. 
+                    We have handled port numbers in both developement and production.
+                    The server has a REST API with an /api route to handle get/post requests.
+                    From the /api route, we created /orders, /products, /subs, /tour routes.
                     We also handled URL parameter validation in /api/products/:productId
-                    by checking that productId is always an integer through regex.
-                    The server also handles 404 and 500 errors.
+                    by checking that productId is always an integer via regex.
+                    The server also handles 404 and 500 errors, and redirects to https.
                 </p>
+                <P>As we wanted to try deploying the web application online, we chose
+                    Heroku as our cloud hosting platform due to its ease. This can be found
+                    on <b><a href='https://tangerinerye.herokuapp.com/'>this link</a></b>. 
+                    However, we found out that it does not support sqlite3 as a database, and
+                    will require the database to be rebuilt in postgresql. Hence, only static
+                    assets are served and any dynamic pages are only shown as loading... 
+                    We also have self-issued our own self-signed SSL certificate
+                    and keys, but did not get an authorised certificate. The initial plan was 
+                    to deploy to a cloud server to get a domain and get request one, however,
+                    because the app is unfinished (we have not dealt with transactions, and
+                    the deployed application is only static), we did not have time to get one. 
+                </P>
             <li><b>A for Database</b></li>
-                <p>We have managed to insert data and extract it in
-                    localhost:3001/api/subs, by using async/await style. We have
-                    designed a database schema to store email subscriptions, products
-                    (name, description, pictures, price) and customers (address, name,
-                    ordered products). To our knowledge, this schema is normalised up to
-                    BCNF.
+                <p>The database schema is in the folder /db/dbSchema.js which is used in 
+                    /db/createdb.js to create the database, data.db.
+                    <span class="img-center">
+                    <img 
+                        src="schema.png"
+                        alt="database schema" />
+                    </span>
+                    The website allows anyone to join the mailing list by just submitting
+                    their email into the form, which will be stored in the table Subscribers.
+                    The email address is stored as TEXT and has an INTEGER PRIMARY KEY 
+                    subs_id, which auto-increments when new data is inserted. The tour page 
+                    is also rendered dynamically by getting data from the database, and the 
+                    relevant data is stored in Tour_Dates. All fields are NOT NULL.
+                    The merch page is also rendered dynamically on the client-side, and 
+                    the data is fetched from the Products table. To allow the client-side 
+                    to render the relevant pictures, Product_Pics includes a field picture 
+                    TEXT which is the name of the product picture stored in /assets. The 
+                    product can have none or many pictures associated with it.
+                </p>
+                <p>To store transaction data, Customers, Addresses, Order_Items, Cust_Orders
+                    tables are used. We want the customer to be able to shop without having 
+                    to log in, hence each customer that has already paid will be stored as 
+                    a new customer even if they have already purchased from the site before.
+                    This is implemented this way as names or email are not treated as UNIQUE
+                    attributes. Similarly, the Addresses table associated with the customer 
+                    through the associative entity Cust_Addr will store new addresses for 
+                    each customer. There are optional fields in Customers and Addresses, 
+                    namely cust_phone, addr_line_2 and addr_line_3, which do not have 
+                    NOT NULL attributes. As we have not implemented a real transaction feature
+                    through PayPal sandbox, no billing addresses are stored (assumes that 
+                    home address is the same as the billing address). A customer can order 1 
+                    or more products of any quantity, and this is stored in Order_Items and 
+                    Cust_Orders.
+                </p>
+                <p>The schema complies with 1NF as each attribute has atomic values, and each 
+                    value is a single element. It also satisfies 2NF sa there are no partial
+                    functional dependencies, as the primary keys for each table are unique. 
+                    However, Order_Items does not satisfy 3NF, as there is a transitive dependency 
+                    between quantity->product_id->order_id->id. However, although this violates 
+                    3NF, it makes it easier for the API to get the quantities of the associated 
+                    product order. 
                 </p>
             <li><b>A for Dynamic pages</b></li>
                 <p>
