@@ -44,9 +44,11 @@ class TourPage extends Component {
             <div>
                 <OverHeadBar currentPage='tour'/>
                     <div className={tour.center}>
-                    <p className={tour.heading}>2020 WORLD TOUR</p>
-                    {this.state.tourDates.map((tour) => {
-                        return <Place tour={tour}/>})}
+                        <p className={tour.heading}>2020 WORLD TOUR</p>
+                        <div>
+                            {this.state.tourDates.map((tour) => {
+                                return <Place tour={tour} key={tour.id}/>})}
+                        </div>
                     </div>
                 <IconBar />
             </div>

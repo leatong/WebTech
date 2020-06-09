@@ -19,8 +19,8 @@ class DetailPage extends Component{
         const response = await fetch(`/api/products/${this.props.match.params.id}`);
         const product = await response.json();
         this.setState({loading: false, details: product})
-        console.log(this.props);
-        console.log(this.state.details.length);
+        // console.log(this.props);
+        // console.log(this.state.details.length);
     }
 
     decrement = () => {

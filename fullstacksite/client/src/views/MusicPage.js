@@ -25,11 +25,11 @@ function MusicPage() {
                 </div>
             </div>
             <div className={music.embed}>
-                <iframe title="Honey Youtube" width="560" height="315" src="https://www.youtube.com/embed/haBxkGrYPUI" frameborder="0" 
-                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                <iframe title="Honey Youtube" width="560" height="315" src="https://www.youtube.com/embed/haBxkGrYPUI" frameBorder="0"
+                    allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen
                     className={music.youtube}></iframe>
                 <iframe title="Tangerine Rye Spotify" src="https://open.spotify.com/embed/artist/6N7HQGSTngvAUUqDquoXfI" 
-                    width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>                    
+                    width="300" height="380" frameBorder="0" allowtransparency="true" allow="encrypted-media"></iframe>
             </div>
             <IconBar />
         </div>
