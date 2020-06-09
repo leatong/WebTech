@@ -25,7 +25,7 @@ class ShoppingCartPage extends Component {
         }
         var money = this.totalCost();
         this.setState({totalCost: money});
-        console.log(this.state);
+        // console.log(this.state);
         this.setState({loading: false});
     }
 
@@ -44,9 +44,9 @@ class ShoppingCartPage extends Component {
     }
 
     checkoutCart = (childState) => {
-        console.log(childState);
+        // console.log(childState);
         var list = this.state.productList;
-        console.log(list);
+        // console.log(list);
         fetch(('/api/orders/createNewOrder'), {
             method: 'POST',
             headers: {
@@ -69,8 +69,7 @@ class ShoppingCartPage extends Component {
             console.log(res)
         }).catch(err => console.log(err));
         alert("Success");
-        //console.log("passed to shoppingCartPage");
-        //console.log(this.state);
+        this.emptyCart();
     }
 
     totalCost() {
@@ -100,7 +99,6 @@ class ShoppingCartPage extends Component {
                 <div className={cart.overview}>
                     <div className={cart.productList}>
                         {this.state.productList.map((product, index) => {
-                            console.log(index);
                             return (
                                 <CartProduct product={product} index={index} key={index} onRemove={this.removeItem}
                                 updateCart={()=>this.componentDidMount()} zeroCount={()=>this.removeItem(index)}/>

@@ -34,7 +34,7 @@ class CartProduct extends Component {
     }
 
     render() {
-        const {picture, name, size, price, count} = this.props.product;
+        const {picture, name, size, price} = this.props.product;
         return (
             <div className={cart.product}>
                 <div className={cart.left}>
