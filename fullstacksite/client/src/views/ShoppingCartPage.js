@@ -100,6 +100,7 @@ class ShoppingCartPage extends Component {
                 <div className={cart.overview}>
                     <div className={cart.productList}>
                         {this.state.productList.map((product, index) => {
+                            console.log(index);
                             return (
                                 <CartProduct product={product} index={index} key={index} onRemove={this.removeItem}
                                 updateCart={()=>this.componentDidMount()} zeroCount={()=>this.removeItem(index)}/>
