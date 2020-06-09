@@ -98,9 +98,8 @@ class ShoppingCartPage extends Component {
                     <div className={cart.productList}>
                         {this.state.productList.map((product, index) => {
                             return (
-                                // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                                 // key has to be unique not just within the same rendering loop
-                                // Otherwise when deleting previous child, the child behind will take over it's old state
+                                // Otherwise when deleting previous child, the child behind will take over its old state
                                 <CartProduct product={product} index={index} key={`${product.id}-${product.size}`}
                                              onRemove={this.removeItem} updateCart={()=>this.componentDidMount()}
                                              zeroCount={()=>this.removeItem(index)}/>
