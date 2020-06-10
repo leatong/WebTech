@@ -23,10 +23,6 @@ var credentials = {
     cert: cert
 };
 
-http.createServer(app).listen(port, function (){
-    console.log("Server listening on port %d in %s mode", this.address().port, app.settings.env);
-});
-
 // Run https server if on localhost
 if (process.env.NODE_ENV != 'production') {
     var httpsServer = https.createServer(credentials, app);
@@ -38,6 +34,9 @@ if (process.env.NODE_ENV != 'production') {
 // Express only serves static assets in production
 if (process.env.NODE_ENV == "production") {
     console.log("Production mode");
+    http.createServer(app).listen(port, function (){
+        console.log("Server listening on port %d in %s mode", this.address().port, app.settings.env);
+    });
     app.use(express.static(path.join(__dirname, 'client/build')));
 } else {
     app.use(function (req, res, next) {
