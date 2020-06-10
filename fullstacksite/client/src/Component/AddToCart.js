@@ -16,7 +16,7 @@ export function AddToCart(productInfo, paramId) {
         let exists = false;
         for (let i=0; i<arr.length; i++) {
             if (arr[i].id === paramId && arr[i].size === size) {
-                console.log(arr[i].count, count);
+                //console.log(arr[i].count, count);
                 arr[i].count += count;
                 arr[i].cost += count * arr[i].price;
                 exists = true;
