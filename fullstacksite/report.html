@@ -25,21 +25,21 @@
             <p>
                 We generated HTML with React framework. We chose React as we
                 wanted to learn the industry standard.
-                We used divisions very well, combining with css styling and React JSX ES6 style.
+                We used divisions very well, combining with CSS styling and React JSX ES6 style.
             </p>
             <li><b>A for CSS</b></li>
             <p>
                 We generated CSS with React, and made CSS module 
                 stylesheets for each page. We also designed
                 responsive pages that resizes components 
-                on mobile screens with @media. This included changing 
+                on mobile screens with @media queries. This included changing 
                 the flex-direction from row to column, and various 
                 different min-width sizes found through trial and error.
                 The animated gradient background was also made with CSS.
                 Although the spinning vinyl-record on the music page was not made by us 
                 (taken from <a href="https://codepen.io/thebabydino/pen/HjJlL">
                 codepen</a>), the CSS to contain the album and single EP
-                covers on the vinyl record was made by us. It was difficult 
+                covers on the vinyl record was written by us. It was difficult 
                 to get the pictures to align in a triangle symmetrically, so 
                 the alignment is not perfect. Our initial idea for the record 
                 containing album stickers were to have them play the music when 
@@ -49,8 +49,8 @@
                 playing. Hence, we just placed the spotify and youtube iframe below 
                 the record. There are still hover animations associated with the 
                 stickers but no associated clickEvents are programmed. We also made 
-                sure that there are no style tags in the code, but all CSS styling 
-                is done by div className tags.
+                sure that there are no style tags in the code, and all CSS styling 
+                is applied by div className tags.
             </p>
             <p>
                 We also investigated several issues with CSS and React:
@@ -67,13 +67,13 @@
             </p>
             <li><b>A for JS</b></li>
             <p>We have investigated eventListeners, eventHandlers, stateHandlers
-                and browser routers with client-side JS framework,
+                and browser routers using react-router-dom with client-side JS framework,
                 React. We also created animation with CSS.
             </p>
             <p>
                 We spent efforts in keeping our code DRY, which means we have a number of child components
-                that are called by parent components. We also learnt how to pass data and functions between parent and child
-                components.
+                that are called by parent components, such as for dynamic client-side rendering. We also 
+                learnt how to pass data and functions between parent and child components using props.
                 <ul>
                 <li>
                     The overhead logo and navigation bar, as well as the footer are components that
@@ -110,12 +110,12 @@
             <p>
                 One important thing we learnt from rendering child classes by mapping is that we need to provide
                 a unique key to React. This key cannot only be unique within the loop, i.e. key={index}. Because
-                in this way, if we update the array and removed the first object, the previous second object will
-                take over the first place, thus it will also take over the old child state of when key={0}.
+                in this way, if we update the array and removed the first object, the second object will
+                take over its place, as well as taking over the old child state of when key={0}.
             </p>
             <p>
                 For example: if we have product A with attribute "count"=2 and product B with attribute "count"=1.
-                They will be rendered one by one by calling the child component in the mapping loop.
+                They will be rendered one by one by calling the child component in the map loop.
                 So React will know them as key={0} (for product A) and key={1}
                 (for product B). So in the child states, product A will have this.state.count=2, while product B's is 1.
                 This is correct.
@@ -127,7 +127,8 @@
             </p>
             <p>
                 This shows how important the key attribute is in mapping child component. It has to associate with an
-                unique property within the object, rather than a random looping index.
+                unique property within the object, rather than a random looping index. Hence, we solved this bug by 
+                providing a unique key index of both the product id and its size together.
             </p>
             </li>
             <li>
@@ -153,13 +154,13 @@
                 <p>All images in the assets folder were taken from
                     the Tangerine Rye facebook page. Images had to be
                     manually edited using Photoshop to create transparent
-                    backgrounds. This was done by first cropping and magic wand 
+                    backgrounds. This was done by first cropping and using the magic wand 
                     to select the white background and deleting it. However, the wand 
                     could not select all of the white background, so manual selection 
-                    was done to get all the white background removed. Similar 
+                    was done to get the remaining white background removed. Similar 
                     manipulations were done on the blue album cover. The shadow 
                     was removed completely to make the transparent cover cleaner. 
-                    The manipulations on the album cover was undoubtedly harder, 
+                    The manipulations on the album cover were undoubtedly harder, 
                     as the black tire and the dark blue background did not contrast 
                     as much as the logo (orange and white).
                     <br>
@@ -221,12 +222,12 @@
             <li><b>A for SVG</b></li>
                 <p>All icons taken from font-awesome and material-ui
                     were SVG. As all the band logos were professionally
-                    made, there was no real use for homemade SVG
+                    made, there was no real use for our own SVG
                     designs. For the purpose of this assignment,
                     we created a cat SVG logo with Inkscape (because one of the
                     contributors has 5 cats at home and is obsessed
                     with cats!) and pasted it onto a t-shirt and a cap
-                    as fake merchandise.
+                    to act as fake merchandise.
                 </p>
                 <p>
                     <b>The original cat logo and its merchandise:</b>
@@ -296,9 +297,9 @@
                     and keys using openssl, but did not get an authorised certificate. The initial plan was 
                     to deploy to a cloud server to get a domain and request one from 
                     <a href="https://letsencrypt.org">letsencrypt.org</a>, however,
-                    because the app is unfinished (we have not dealt with transactions, and
-                    the deployed application is only static), we did not have time to get one. 
-                    Additionally, having a separate SSL certificate on Heroku required money.
+                    because the app is unfinished (we have not dealt with transactions using 
+                    PayPal sandbox, and the deployed application is only static), we did not have time to get one. 
+                    Additionally, having a separate SSL certificate on Heroku costs money.
                 </P>
             <li><b>A for Database</b></li>
                 <p>The database schema is in the folder /db/dbSchema.js which is used in 
@@ -346,17 +347,21 @@
                 </p>
             <li><b>A for Dynamic pages</b></li>
                 <p>
-                    We have created dynamic pages for individual product detail page. It gets rendered by user
-                    clicking the "DETAILS" button in the shopping page and will take the id of the product
-                    and direct to /merch/:id.
+                    We have created dynamic pages that are rendered on the client-side on TourPage,
+                    MerchPage and each individual product DetailPage. For the TourPage and MerchPage, data 
+                    is fetched from the server via api/tour and api/products respectively. 
+                    For the DetailPage, the data is fetched first from the REST API (api/products/:id). 
+                    It then gets rendered when the "DETAILS" button is clicked on the merch page and will take the id 
+                    of the product (stored from GET request api/products) and direct the page to /merch/:id.
                 </p>
                 <p>
                     The dynamic page is not simply called by the shopping page (/merch). The product details
                     are passed from MerchPage.js to its child component Product.js, which is rendered by mapping
-                    each entry of the JSON array as mentioned in JS section above. Then in Product.js the id of
+                    each entry of the JSON array as mentioned in JS section above. In Product.js the id of
                     the product is passed to ClickDetail Button in ClickButton.js, which takes it as a path for the
-                    url. Then, because this url matches the pattern declared in AllPath.js (/merch/:id), the DetailPage.js gets
-                    rendered. In the meantime, that id is stored to in props.match.params as a property to the page.
+                    url (/merch/:id). After fetching the data from the REST API depending on its id via 
+                    api/products/:id, the DetailPage renders the product details. The id is stored in props.match.params 
+                    as a property to the page.
                 </p>
                 <p>
                     Then, in DetailPage.js, it fetches the id of the specific product to render from
