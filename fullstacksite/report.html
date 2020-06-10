@@ -114,10 +114,11 @@
                 take over the first place, thus it will also take over the old child state of when key={0}.
             </p>
             <p>
-                For example: if we have product A with attribute "count"=2 and product B with attribute "count"=1.
-                They will be rendered one by one by calling the child component in the mapping loop.
+                For example: in the above code snippet from client/src/views/ShoppingCartPage.js, if we have
+                product A with attribute product.count=2 and product B with attribute product.count=1,
+                they will be rendered one by one by calling the child component in the mapping loop.
                 So React will know them as key={0} (for product A) and key={1}
-                (for product B). So in the child states, product A will have this.state.count=2, while product B's is 1.
+                (for product B), if we assign key={index}. So in the child states, when we render their count as a state, product A will have this.state.count=2, while product B's is 1.
                 This is correct.
                 Now if we click the button in the child component to remove product A from the array in the parent component,
                 then re-render the child component
@@ -127,7 +128,7 @@
             </p>
             <p>
                 This shows how important the key attribute is in mapping child component. It has to associate with an
-                unique property within the object, rather than a random looping index.
+                unique feature of the object, rather than a random looping index.
             </p>
             </li>
             <li>
@@ -141,6 +142,15 @@
                     then render the page after loading is completed.
                 </p>
             </li>
+            <li><p>
+                One other thing to mention is that, although albums and singles do not have different sizes
+                like clothes do, we still provided the option. This is to practice storing products to the
+                shopping cart: only the product with the same id and same size will be stored as one object.
+                For example, if after we added 1 T-shirt size S to an empty cart, it is stored as myCart[0].
+                Then if we add 1 T-shirt size M, it will be stored as myCart[1]. However, if we add another
+                T-shirt size S, it will not be stored as myCart[2] but update myCart[0].count to 2.
+                See client/src/Component/AddToCart.js.
+            </p></li>
             <li>
                 We have a thorough understanding of the different type of functions: the one with arrow and the
                 one without. When calling a function from within the JSX component call, it is important to call
@@ -347,20 +357,20 @@
             <li><b>A for Dynamic pages</b></li>
                 <p>
                     We have created dynamic pages for individual product detail page. It gets rendered by user
-                    clicking the "DETAILS" button in the shopping page and will take the id of the product
+                    clicking the "DETAILS" button in the shopping page (/merch) and will take the id of the product
                     and direct to /merch/:id.
                 </p>
                 <p>
                     The dynamic page is not simply called by the shopping page (/merch). The product details
                     are passed from MerchPage.js to its child component Product.js, which is rendered by mapping
-                    each entry of the JSON array as mentioned in JS section above. Then in Product.js the id of
+                    each entry of the JSON array as mentioned in the JS section above. Then in Product.js the id of
                     the product is passed to ClickDetail Button in ClickButton.js, which takes it as a path for the
-                    url. Then, because this url matches the pattern declared in AllPath.js (/merch/:id), the DetailPage.js gets
-                    rendered. In the meantime, that id is stored to in props.match.params as a property to the page.
+                    url. Then, because this url matches the pattern declared in AllPath.js ("/merch/:id"), the DetailPage.js gets
+                    rendered. In the meantime, that id is stored in props.match.params as a property to the page.
                 </p>
                 <p>
                     Then, in DetailPage.js, it fetches the id of the specific product to render from
-                    this.props.match.params.id. After this async function finished, the details of this product gets
+                    this.props.match.params.id. After this async function finishes, the details of this product gets
                     loaded.
                 </p>
             <li><b>? for Depth (out of 20)</b></li>
