@@ -28,17 +28,39 @@
                 We used divisions very well, combining with css styling and React JSX ES6 style.
             </p>
             <li><b>A for CSS</b></li>
-            <p>We generated CSS with React, and made
-            CSS modules stylesheet for each page. We also designed
-            responsive pages that resize on smaller screens.
-            The gradient animated background was also made with CSS.
-            We also investigated several issues with CSS and React:
+            <p>
+                We generated CSS with React, and made CSS module 
+                stylesheets for each page. We also designed
+                responsive pages that resizes components 
+                on mobile screens with @media. This included changing 
+                the flex-direction from row to column, and various 
+                different min-width sizes found through trial and error.
+                The animated gradient background was also made with CSS.
+                Although the spinning vinyl-record on the music page was not made by us 
+                (taken from <a href="https://codepen.io/thebabydino/pen/HjJlL">
+                codepen</a>), the CSS to contain the album and single EP
+                covers on the vinyl record was made by us. It was difficult 
+                to get the pictures to align in a triangle symmetrically, so 
+                the alignment is not perfect. Our initial idea for the record 
+                containing album stickers were to have them play the music when 
+                clicked. However, spotify/youtube can only have embed code through 
+                iframe. We did not want to have the full music just play on the 
+                website as this meant there will be no royalties received from 
+                playing. Hence, we just placed the spotify and youtube iframe below 
+                the record. There are still hover animations associated with the 
+                stickers but no associated clickEvents are programmed. We also made 
+                sure that there are no style tags in the code, but all CSS styling 
+                is done by div className tags.
+            </p>
+            <p>
+                We also investigated several issues with CSS and React:
             <ul>
                 <li>
                 Font-awesome and material-ui icons behaved
                 differently for style tags, so our solution was to
                 make different functions that styled font-awesome
-                icons with a div tag. This includes using "withStyles"
+                icons with a div tag. This can be seen in 
+                client/src/views/IconBar.js, as well as using "withStyles"
                 method (see client/src/views/ButtonStyle.js) to modify their styles.
                 </li>
             </ul>
@@ -234,7 +256,9 @@
                 </p>
             <li><b>A for Server</b></li>
                 <p>For our server, we chose to use Express to make routing easier. 
-                    We have handled port numbers in both developement and production.
+                    We have handled port numbers in both development and production. This 
+                    included having a separate http port for production (Heroku has an 
+                    automatic SSL certificate) and a https port in localhost. 
                     The server has a REST API with an /api route to handle get/post requests.
                     From the /api route, we created /orders, /products, /subs, /tour routes.
                     To prevent SQL injections, all INSERT, UPDATE, and SELECT WHERE statements were 
@@ -274,6 +298,7 @@
                     <a href="https://letsencrypt.org">letsencrypt.org</a>, however,
                     because the app is unfinished (we have not dealt with transactions, and
                     the deployed application is only static), we did not have time to get one. 
+                    Additionally, having a separate SSL certificate on Heroku required money.
                 </P>
             <li><b>A for Database</b></li>
                 <p>The database schema is in the folder /db/dbSchema.js which is used in 
@@ -338,7 +363,7 @@
                     this.props.match.params.id. After this async function finished, the details of this product gets
                     loaded.
                 </p>
-            <li>X for Depth (out of 20)</li>
+            <li><b>? for Depth (out of 20)</b></li>
         </ul>
     </body>
 </html>
